@@ -52,6 +52,10 @@
     </preConditions>
     <comment>Init the superman user.</comment>
     <sql>
+      -- The below seem to cause issues...
+      delete from provider
+      where identifier in ('UNKNOWN', 'LABMANAGER', 'LABSYSTEM');
+
       set @uid = uuid();
 
       insert into openmrs.person(gender, birthdate, birthdate_estimated, dead,
