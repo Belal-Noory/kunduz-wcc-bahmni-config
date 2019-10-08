@@ -45,9 +45,9 @@
       select location_id into @location_id from location where name = 'WCC';
 
       insert into location_tag_map(location_id, location_tag_id)
-      values (@location_id, (select location_tag_id from location_tag where name = 'Login Location'),
-             (@location_id, (select location_tag_id from location_tag where name = 'Visit Location'),
-             (@location_id, (select location_tag_id from location_tag where name = 'Appointment Location')
+      values (@location_id, (select location_tag_id from location_tag where name = 'Login Location')),
+             (@location_id, (select location_tag_id from location_tag where name = 'Visit Location')),
+             (@location_id, (select location_tag_id from location_tag where name = 'Appointment Location'));
     </sql>
   </changeSet>
   <changeSet id="08102019_1553" author="R-VdP">
