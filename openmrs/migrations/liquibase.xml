@@ -28,7 +28,7 @@
               NULL, NULL, NULL, uuid());
     </sql>
   </changeSet-->
-  <changeSet id="default-201905311115" author="Bindu, Angshuman">
+  <changeSet id="08102019_1540" author="R-VdP">
     <preConditions onFail="MARK_RAN">
       <sqlCheck expectedResult="0">
         select count(*)
@@ -36,10 +36,86 @@
         where name="WCC";
       </sqlCheck>
     </preConditions>
-    <comment> Add default location for WCC </comment>
+    <comment>Add default location for WCC.</comment>
     <sql>
       insert into location(name, description, retired, uuid, date_created, creator)
       values ('WCC', 'Wound Care Centre', false, uuid(), now(), 1);
+    </sql>
+  </changeSet>
+  <changeSet id="08102019_1553" author="R-VdP">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        select count(*)
+        from openmrs.users
+        where username="superman";
+      </sqlCheck>
+    </preConditions>
+    <comment>Init the superman user.</comment>
+    <sql>
+      set @uid = uuid();
+
+      insert into openmrs.person(gender, birthdate, birthdate_estimated, dead,
+                                 death_date, cause_of_death, creator,
+                                 date_created, changed_by, date_changed, voided,
+                                 voided_by, date_voided, void_reason, uuid,
+                                 deathdate_estimated, birthtime)
+      values ('M', null, 0, 0, null, null, 1, now(), null,
+              null, 0, null, null, null, @uid, 0, null);
+
+      -- Create a provider with person ID
+      set @pid = null;
+
+      select person_id into @pid from person where uuid = @uid;
+
+      insert into openmrs.person_name(preferred, person_id, prefix, given_name,
+                                      middle_name, family_name_prefix, family_name,
+                                      family_name2, family_name_suffix, degree,
+                                      creator, date_created, voided, voided_by,
+                                      date_voided, void_reason, changed_by,
+                                      date_changed, uuid)
+      values (1, @pid, null, 'Super', '', null, 'Man', null, null,
+              null, 1, now(), 0, null, null, null, null, null, uuid());
+
+      insert into openmrs.provider(person_id, name, identifier, creator,
+                                   date_created, changed_by, date_changed,
+                                   retired, retired_by, date_retired,
+                                   retire_reason, uuid, provider_role_id)
+      values (@pid, null, 'SUPERMAN', 1, now(), null, null,
+              0, null, null, null,uuid(), null);
+
+      -- Create a User with person Id
+
+      insert into openmrs.users(system_id, username, password, salt, secret_question,
+                                secret_answer, creator, date_created, changed_by,
+                                date_changed, person_id, retired, retired_by,
+                                date_retired, retire_reason, uuid)
+      values ('SUPERMAN', 'superman',
+              'fe0f4ff3ef8f1c08e773f44049cb3fc5d7245d05a2def777f6393aad89a1285f67f3664f4df7cf7d04c373960fa4ebb89239be6820b788fe741c83a0c24db644',
+              'b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d9',
+              '', null, 1, now(), 1, now(), @pid, 0, null, null, null, uuid());
+    </sql>
+  </changeSet>
+  <changeSet id="08102019_1600" author="R-VdP">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        select count(*)
+        from visit_type
+        where name="OPD";
+      </sqlCheck>
+    </preConditions>
+    <comment>Add the OPD visit type.</comment>
+    <sql>
+      insert into openmrs.visit_type(name, description, creator, date_created,
+                                     changed_by, date_changed, retired, retired_by,
+                                     date_retired, retire_reason, uuid)
+      values ('OPD', 'Visit for patients coming for OPD', 1, now(), null, null, 0, null, null, null, uuid());
+    </sql>
+  </changeSet>
+  <changeSet id="08102019_1601" author="R-VdP">
+    <comment>Delete the OpenELIS sync scheduler.</comment>
+    <sql>
+      delete from scheduler_task_config
+      where schedulable_class = 'org.bahmni.module.elisatomfeedclient.api.task.OpenElisPatientFeedFailedEventsTask';
     </sql>
   </changeSet>
 </databaseChangeLog>
