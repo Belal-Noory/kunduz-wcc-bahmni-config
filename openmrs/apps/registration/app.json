@@ -1,0 +1,72 @@
+{
+  "id": "bahmni.registration",
+  "instanceOf":"bahmni.template.registration",
+  "description": "Bahmni Patient Registration App",
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.registration.patient.search.result.action",
+      "description": "Bahmni Patient Search Result Action"
+    },
+    {
+      "id": "org.bahmni.registration.patient.next",
+      "description": "After Bahmni Patient Registration, forward url configuration"
+    }
+  ],
+  "contextModel": [
+    "patientUuid",
+    "activeVisitUuid"
+  ],
+  "config" : {
+    "forwardUrlsForVisitTypes": [
+      {
+        "visitType": "OPD",
+        "forwardUrl": "../appointments/#/home/manage/appointments/calendar/new",
+        "translationKey": "Start OPD Visit",
+        "shortcutKey": "c"
+      }
+    ],
+    "minCharRequireToSearch": 3,
+    "dobMandatory": true,
+    "showStartVisitButton": true,
+    "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+    "defaultVisitType": "OPD",
+    "showMiddleName": false,
+    "showLastName": true,
+    "isLastNameMandatory": true,
+    "showSaveConfirmDialog": false,
+    "disablePhotoCapture": true,
+    "showCasteSameAsLastNameCheckbox": false,
+    "patientInformation": {
+      "additionalPatientInformation": {
+        "title": "Additional Patient Information",
+        "attributes": [ ]
+      }
+    },
+    "mandatoryPersonAttributes": [ ],
+    "addressHierarchy": {
+       "showAddressFieldsTopDown": false
+    },
+    "fieldValidation" : {
+      "HospitalID": {
+        "pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{1}$",
+        "errorMessage": "Should be in 000-000-000-0 pattern"
+      },
+      "Patient phone number 1": {
+        "pattern": "^\\d{9,10}$",
+        "errorMessage": "Allows only 9 or 10 digits"
+      },
+      "Other phone number": {
+        "pattern": "^\\d{9,10}$",
+        "errorMessage": "Allows only 9 or 10 digits"
+      }
+    },
+    "patientSearch": {
+      "address": {
+        "label": "Address",
+        "placeholder": "Enter District",
+        "field": "address2"
+      }
+    }
+  }
+}
+

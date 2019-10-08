@@ -1,0 +1,62 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+.row {
+    float: clear;
+}
+.rowx {
+    clear:both;
+}
+.left {
+    width: 60%;
+    float: left;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 75px;
+    border-spacing: 15px;
+}
+.right {
+    width: 50%;
+    float: left;
+    font-size: 20px;
+    text-align: right;
+}
+.middle {
+    width: 50%;
+    float: left;
+    font-size: 20px;
+    text-align: middle;
+}
+.center {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-style: none;
+}
+.label {
+    font-weight: semibold;
+}
+
+.col {
+    width:  33%;
+    text-align: left;
+    display: inline-block;
+}
+.custom {
+    width: 43%;
+    text-align: left;
+}
+
+.colu{
+    width:25%;
+    text-align: left;
+}
+.bold{
+  font-size: 30px;
+  font-weight: bold;
+}
+.bolded{
+  font-size: 20px;
+  font-weight: bold;
+}
