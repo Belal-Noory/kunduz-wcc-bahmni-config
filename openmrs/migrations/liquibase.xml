@@ -97,6 +97,20 @@
               'fe0f4ff3ef8f1c08e773f44049cb3fc5d7245d05a2def777f6393aad89a1285f67f3664f4df7cf7d04c373960fa4ebb89239be6820b788fe741c83a0c24db644',
               'b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d9',
               '', null, 1, now(), 1, now(), @pid, 0, null, null, null, uuid());
+
+      set @provider_id = null;
+
+      select provider_id into @provider_id from provider where person_id = @pid;
+
+      insert into openmrs.user_role(user_id, role)
+      values (@provider_id, 'Admin-App'),
+             (@provider_id, 'Appointments:FullAccess'),
+             (@provider_id, 'Clinical-App'),
+             (@provider_id, 'Privilege Level: Full'),
+             (@provider_id, 'Registration-App'),
+             (@provider_id, 'Reports-App'),
+             (@provider_id, 'SuperAdmin'),
+             (@provider_id, 'System Developer');
     </sql>
   </changeSet>
   <changeSet id="08102019_1600" author="R-VdP">
