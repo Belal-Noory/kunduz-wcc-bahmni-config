@@ -51,7 +51,6 @@
     </sql>
   </changeSet>
   <changeSet id="14102019_1437" author="R-VdP">
-    <comment>Allow fetching locations anonymously.</comment>
     <preConditions onFail="MARK_RAN">
       <sqlCheck expectedResult="0">
         select count(*)
@@ -60,6 +59,7 @@
           and privilege = 'Get Locations';
       </sqlCheck>
     </preConditions>
+    <comment>Allow fetching locations anonymously.</comment>
     <sql>
       insert into openmrs.role_privilege(role, privilege) values ('Anonymous', 'Get Locations');
     </sql>
