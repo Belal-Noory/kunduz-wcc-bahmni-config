@@ -1,8 +1,8 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,Allow decimals,Units,_version:1,_order:1100
 a08eb500-a498-4e84-8737-58d3d59f6c61,,reg.Village,Village,,Misc,Coded,,,,,,
-02b21ec1-1303-4f62-baa9-ab053e5792af,,reg.followupStatus,Follow-up status,,Misc,Coded,reg.followup.normal;reg.followup.oneMissedAppointment;reg.followup.twoMissedAppointments;reg.followup.threeMissedAppointments;reg.followup.lostToFollowup,,,,,
 ,,reg.followup.normal,Normal,,Misc,N/A,,,,,,
 ,,reg.followup.oneMissedAppointment,One missed appointment,,Misc,N/A,,,,,,
 ,,reg.followup.twoMissedAppointments,Two missed appointments,,Misc,N/A,,,,,,
 ,,reg.followup.threeMissedAppointments,Three missed appointments,,Misc,N/A,,,,,,
 ,,reg.followup.lostToFollowup,Lost to follow-up,,Misc,N/A,,,,,,
+02b21ec1-1303-4f62-baa9-ab053e5792af,,reg.followupStatus,Follow-up status,,Misc,Coded,reg.followup.normal;reg.followup.oneMissedAppointment;reg.followup.twoMissedAppointments;reg.followup.threeMissedAppointments;reg.followup.lostToFollowup,,,,,
