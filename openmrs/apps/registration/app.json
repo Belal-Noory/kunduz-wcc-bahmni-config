@@ -44,14 +44,16 @@
           "reg.phoneNumber",
           "reg.dateFirstVisit"
         ],
-        "expanded": true,
+        "expanded": true
+      },
       "VillageInformation": {
         "title": "Location Information",
         "attributes": [
           "reg.village",
           "reg.villageOther"
         ],
-        "expanded": true,
+        "expanded": true
+      },
       "followupInformation": {
         "title": "Follow-up Information",
         "attributes": [
