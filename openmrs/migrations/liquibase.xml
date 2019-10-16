@@ -28,28 +28,6 @@
               NULL, NULL, NULL, uuid());
     </sql>
   </changeSet-->
-  <changeSet id="08102019_1540" author="R-VdP">
-    <preConditions onFail="MARK_RAN">
-      <sqlCheck expectedResult="0">
-        select count(*)
-        from location
-        where name="WCC";
-      </sqlCheck>
-    </preConditions>
-    <comment>Add default location for WCC.</comment>
-    <sql>
-      insert into location(name, description, retired, uuid, date_created, creator)
-      values ('WCC', 'Wound Care Centre', false, uuid(), now(), 1);
-
-      set @location_id = null;
-      select location_id into @location_id from location where name = 'WCC';
-
-      insert into location_tag_map(location_id, location_tag_id)
-      values (@location_id, (select location_tag_id from location_tag where name = 'Login Location')),
-             (@location_id, (select location_tag_id from location_tag where name = 'Visit Location')),
-             (@location_id, (select location_tag_id from location_tag where name = 'Appointment Location'));
-    </sql>
-  </changeSet>
   <changeSet id="14102019_1437" author="R-VdP">
     <preConditions onFail="MARK_RAN">
       <sqlCheck expectedResult="0">
