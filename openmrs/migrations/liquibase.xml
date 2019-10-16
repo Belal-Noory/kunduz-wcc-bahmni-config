@@ -97,5 +97,14 @@
       where schedulable_class = 'org.bahmni.module.elisatomfeedclient.api.task.OpenElisPatientFeedFailedEventsTask';
     </sql>
   </changeSet>
+  <changeSet id="16102019_1532" author="R-VdP">
+    <comment>Delete the relationship types.</comment>
+    <sql>
+      update relationship_type
+      set retired = true, retired_by = 1, date_retired = now(), retire_reason = "Not needed."
+      where a_is_to_b = "Supervisor"
+        and b_is_to_a = "Supervisee";
+    </sql>
+  </changeSet>
 </databaseChangeLog>
 
