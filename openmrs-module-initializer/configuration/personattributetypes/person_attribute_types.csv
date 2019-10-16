@@ -1,6 +1,7 @@
 Uuid,Void/Retire,Name,Description,Format,Foreign uuid,Searchable,Edit privilege,_order:1000
-,TRUE,givenNameLocal,,,,,,
-,TRUE,familyNameLocal,,,,,,
+7e6db4ea-e42f-11e5-8c3e-08002715d519,TRUE,givenNameLocal,,,,,,
+7e6f78a4-e42f-11e5-8c3e-08002715d519,TRUE,familyNameLocal,,,,,,
+7e709f5b-e42f-11e5-8c3e-08002715d519,TRUE,middleNameLocal,,,,,,
 ,,reg.phoneNumber,Phone Number,java.lang.String,,,,
 ,,reg.dateFirstVisit,Date of first visit,org.openmrs.util.AttributableDate,,,,
 ,,reg.village,Village,org.openmrs.Concept,a08eb500-a498-4e84-8737-58d3d59f6c61,,,
