@@ -42,9 +42,19 @@
         "title": "Additional Patient Information",
         "attributes": [
           "reg.phoneNumber",
-          "reg.dateFirstVisit",
+          "reg.dateFirstVisit"
+        ],
+        "expanded": true,
+      "VillageInformation": {
+        "title": "Location Information",
+        "attributes": [
           "reg.village",
-          "reg.villageOther",
+          "reg.villageOther"
+        ],
+        "expanded": true,
+      "followupInformation": {
+        "title": "Follow-up Information",
+        "attributes": [
           "reg.followupStatus",
           "reg.followupStatusComment"
         ],
