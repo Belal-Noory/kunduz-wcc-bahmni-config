@@ -1,3 +1,2 @@
 Uuid,Void/Retire,Identifier type,Name,Description,Prefix,Suffix,First identifier base,Min length,Max length,Base character set,_version:1,_order:1000
 ,,Patient Identifier,patient identifier generator,Sequential generator for the patient identifier,,,5000,4,6,0123456789,,
-
