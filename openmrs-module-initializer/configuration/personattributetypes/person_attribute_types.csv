@@ -1,0 +1,9 @@
+Uuid,Void/Retire,Name,Description,Format,Foreign uuid,Searchable,Edit privilege,_order:1000
+,TRUE,givenNameLocal,,,,,,
+,TRUE,familyNameLocal,,,,,,
+,,reg.phoneNumber,Phone Number,java.lang.String,,,,
+,,reg.dateFirstVisit,Date of first visit,org.openmrs.util.AttributableDate,,,,
+,,reg.village,Village,org.openmrs.Concept,a08eb500-a498-4e84-8737-58d3d59f6c61,,,
+,,reg.villageOther,Village (specify when other),java.lang.String,,,,
+,,reg.followupStatus,Follow-up status,org.openmrs.Concept,02b21ec1-1303-4f62-baa9-ab053e5792af,,,
+,,reg.followupStatusComment,Follow-up status comment,java.lang.String,,,,

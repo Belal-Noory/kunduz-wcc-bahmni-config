@@ -40,27 +40,19 @@
     "patientInformation": {
       "additionalPatientInformation": {
         "title": "Additional Patient Information",
-        "attributes": [ ]
+        "attributes": [
+          "reg.phoneNumber",
+          "reg.dateFirstVisit",
+          "reg.village",
+          "reg.villageOther",
+          "reg.followupStatus",
+          "reg.followupStatusComment"
+        ],
+        "expanded": true
       }
     },
     "mandatoryPersonAttributes": [ ],
-    "addressHierarchy": {
-       "showAddressFieldsTopDown": false
-    },
-    "fieldValidation" : {
-      "HospitalID": {
-        "pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{1}$",
-        "errorMessage": "Should be in 000-000-000-0 pattern"
-      },
-      "Patient phone number 1": {
-        "pattern": "^\\d{9,10}$",
-        "errorMessage": "Allows only 9 or 10 digits"
-      },
-      "Other phone number": {
-        "pattern": "^\\d{9,10}$",
-        "errorMessage": "Allows only 9 or 10 digits"
-      }
-    },
+    "fieldValidation" : {},
     "patientSearch": {
       "address": {
         "label": "Address",
