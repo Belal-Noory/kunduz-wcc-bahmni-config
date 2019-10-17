@@ -39,7 +39,8 @@
     "showCasteSameAsLastNameCheckbox": false,
     "patientInformation": {
       "additionalPatientInformation": {
-        "title": "Additional Patient Information",
+        "title": "Additional patient information",
+        "translationKey": "Additional patient information",
         "attributes": [
           "reg.phoneNumber",
           "reg.dateFirstVisit"
@@ -47,7 +48,8 @@
         "expanded": true
       },
       "VillageInformation": {
-        "title": "Location Information",
+        "title": "Location information",
+        "translationKey": "Location information",
         "attributes": [
           "reg.village",
           "reg.villageOther"
@@ -55,7 +57,8 @@
         "expanded": true
       },
       "followupInformation": {
-        "title": "Follow-up Information",
+        "title": "Follow-up information",
+        "translationKey": "Follow-up information",
         "attributes": [
           "reg.followupStatus",
           "reg.followupStatusComment"
