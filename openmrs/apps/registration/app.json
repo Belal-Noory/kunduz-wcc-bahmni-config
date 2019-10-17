@@ -33,7 +33,7 @@
     "showMiddleName": false,
     "showLastName": true,
     "isLastNameMandatory": true,
-    "showSaveConfirmDialog": false,
+    "showSaveConfirmDialog": true,
     "showBirthTime": false,
     "disablePhotoCapture": true,
     "showCasteSameAsLastNameCheckbox": false,
