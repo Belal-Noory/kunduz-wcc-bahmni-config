@@ -65,13 +65,7 @@
     },
     "mandatoryPersonAttributes": [ ],
     "fieldValidation" : {},
-    "patientSearch": {
-      "address": {
-        "label": "Address",
-        "placeholder": "Enter District",
-        "field": "address2"
-      }
-    }
+    "patientSearch": {}
   }
 }
 
