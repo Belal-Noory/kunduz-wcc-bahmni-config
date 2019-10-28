@@ -68,7 +68,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.assessment.wound_specific.wound_location.hand,G - Hand,,Misc,N/A,,,,,,
 ,,forms.assessment.wound_specific.wound_location.leg,H - Leg,,Misc,N/A,,,,,,
 ,,forms.assessment.wound_specific.wound_location.foot,I - Foot,,Misc,N/A,,,,,,
-,,forms.assessment.wound_specific.wound_location,,Question,Coded,forms.assessment.wound_specific.wound_location.head;forms.assessment.wound_specific.wound_location.thorax;forms.assessment.wound_specific.wound_location.abdomen;forms.assessment.wound_specific.wound_location.pelvic;forms.assessment.wound_specific.wound_location.buttocks;forms.assessment.wound_specific.wound_location.arm;forms.assessment.wound_specific.wound_location.hand;forms.assessment.wound_specific.wound_location.leg;forms.assessment.wound_specific.wound_location.foot,,,,,
+,,forms.assessment.wound_specific.wound_location,Location,,Question,Coded,forms.assessment.wound_specific.wound_location.head;forms.assessment.wound_specific.wound_location.thorax;forms.assessment.wound_specific.wound_location.abdomen;forms.assessment.wound_specific.wound_location.pelvic;forms.assessment.wound_specific.wound_location.buttocks;forms.assessment.wound_specific.wound_location.arm;forms.assessment.wound_specific.wound_location.hand;forms.assessment.wound_specific.wound_location.leg;forms.assessment.wound_specific.wound_location.foot,,,,,
 ,,forms.assessment.wound_specific.mucosae_joint.mucosae,Mucosae,,Misc,N/A,,,,,,
 ,,forms.assessment.wound_specific.mucosae_joint.joint,Joint,,Misc,N/A,,,,,,
 ,,forms.assessment.wound_specific.mucosae_joint,Mucosae/Joint,,Question,Coded,forms.assessment.wound_specific.mucosae_joint.mucosae;forms.assessment.wound_specific.mucosae_joint.joint,,,,,
