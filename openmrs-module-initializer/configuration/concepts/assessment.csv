@@ -29,7 +29,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.assessment.pain.treatment,Treatment given for the pain,,Question,Coded,forms.assessment.pain.treatment.paracetamol;forms.assessment.pain.treatment.ibuprofen;forms.assessment.pain.treatment.diclofenac;forms.assessment.pain.treatment.tramadol,,,,,
 ,,forms.assessment.pain,Pain,,ConvSet,N/A,forms.assessment.pain.score;forms.assessment.pain.characteristic;forms.assessment.pain.treatment,,,,,
 ,,forms.assessment.prophylaxis.tt_vaccine.already_done,Already done,,Misc,N/A,,,,,,
-,,forms.assessment.prophylaxis.tt_vaccine.no,No,Misc,N/A,,,,,,
+,,forms.assessment.prophylaxis.tt_vaccine.no,No,,Misc,N/A,,,,,,
 ,,forms.assessment.prophylaxis.tt_vaccine,TT vaccine,,Question,Coded,forms.assessment.prophylaxis.tt_vaccine.already_done;forms.assessment.prophylaxis.tt_vaccine.no,,,,,
 ,,forms.assessment.prophylaxis.date_vat,Date VAT done,,Question,Date,,,,,,
 ,,forms.assessment.prophylaxis,Prophylaxis vaccine,,ConvSet,N/A,forms.assessment.prophylaxis.tt_vaccine;forms.assessment.prophylaxis.date_vat,,,,,
