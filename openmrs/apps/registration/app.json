@@ -47,12 +47,14 @@
         ],
         "expanded": true
       },
-      "VillageInformation": {
+      "LocationInformation": {
         "title": "Location information",
         "translationKey": "Location information",
         "attributes": [
-          "reg.village",
-          "reg.villageOther"
+          "reg.province",
+          "reg.provinceOther",
+          "reg.district",
+          "reg.village"
         ],
         "expanded": true
       },
