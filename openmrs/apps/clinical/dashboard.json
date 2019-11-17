@@ -21,7 +21,7 @@
       "navigationLinksControl":{  
         "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
         "type":"navigationLinksControl",
-        "displayOrder":2,
+        "displayOrder":20,
         "showLinks":[  
           "home",
           "visit",
@@ -32,7 +32,7 @@
       "visits":{  
         "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
         "type":"visits",
-        "displayOrder":3,
+        "displayOrder":10,
         "dashboardConfig":{  
           "title":null,
           "maximumNoOfVisits":8,
@@ -41,7 +41,7 @@
       },
       "formsDisplay": {
         "type": "forms",
-        "displayOrder": 21,
+        "displayOrder": 30,
         "dashboardConfig": {
           "title": null,
           "maximumNoOfVisits": 10
@@ -51,7 +51,7 @@
       },
       "patientAppointments": {
         "type": "custom",
-        "displayOrder": 22,
+        "displayOrder": 40,
         "config": {
           "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
           "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
