@@ -1,68 +1,59 @@
 {
-    "id": "bahmni.clinical",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.clinical.consultation.board",
-            "description": "Bahmni Clinical Consultation Page"
-        },
-        {
-            "id": "org.bahmni.clinical.conceptSetGroup.*",
-            "description": "Define conceptsets part of a conceptset group"
-        },
-        {
-            "id": "org.bahmni.clinical.orders",
-            "description": "Bahmni Orders Page"
-        },
-        {
-            "id": "org.bahmni.patient.search",
-            "description": "Bahmni Patient search, lookups Page"
-        }
+  "id": "bahmni.clinical",
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.clinical.consultation.board",
+      "description": "Bahmni Clinical Consultation Page"
+    },
+    {
+      "id": "org.bahmni.clinical.conceptSetGroup.*",
+      "description": "Define conceptsets part of a conceptset group"
+    },
+    {
+      "id": "org.bahmni.clinical.orders",
+      "description": "Bahmni Orders Page"
+    },
+    {
+      "id": "org.bahmni.patient.search",
+      "description": "Bahmni Patient search, lookups Page"
+    }
+  ],
+  "contextModel": [
+    "patientUuid",
+    "visitUuid"
+  ],
+  "config": {
+    "hideConditions": false,
+    "quickPrints":false,
+    "networkConnectivity" : {
+      "showNetworkStatusMessage": false,
+      "networkStatusCheckInterval": 20000,
+      "locales" : []
+    },
+    "diagnosisStatus": "Inactive",
+    "obsIgnoreList": [
+      "REGISTRATION FEES",
+      "COMMENTS",
+      "Patient file"
     ],
-    "contextModel": [
-        "patientUuid",
-        "visitUuid"
-    ],
-    "config": {
-      "hideConditions": false,
-      "quickPrints":false,
-      "networkConnectivity" : {
-        "showNetworkStatusMessage": false,
-        "networkStatusCheckInterval": 20000,
-        "locales" : []
-      },
-  	  "diagnosisStatus": "Inactive",
-      "obsIgnoreList": [
-        "REGISTRATION FEES",
-        "COMMENTS",
-        "Patient file"
-      ],
-      "otherInvestigationsMap": {},
-      "allowConsultationWhenNoOpenVisit": false,
-      "defaultVisitType": "OPD",
-      "visitTypeForRetrospectiveEntries": "OPD",
-      "maxConceptSetLevels": 5,
-      "allowOnlyCodedDiagnosis": false,
-      "conceptSetUI": {
-        "Chief Complaint Data": {
-          "autocomplete":true,
-          "codedConceptName":"Chief Complaint",
-          "nonCodedConceptName":"Non-Coded Chief Complaint",
-          "durationRequired": false,
-          "allowAddMore": true
+    "otherInvestigationsMap": {},
+    "allowConsultationWhenNoOpenVisit": false,
+    "defaultVisitType": "OPD",
+    "visitTypeForRetrospectiveEntries": "OPD",
+    "maxConceptSetLevels": 5,
+    "allowOnlyCodedDiagnosis": false,
+    "conceptSetUI": {
+      "Chief Complaint Data": {
+        "autocomplete":true,
+        "codedConceptName":"Chief Complaint",
+        "nonCodedConceptName":"Non-Coded Chief Complaint",
+        "durationRequired": false,
+        "allowAddMore": true
       },
       "forms.assessment.woundSpecific" :{
-          "allowAddMore": true
+        "allowAddMore": true
       },
-      "defaults": {
-          "Number of living children": 1,
-          "Accepted Family Planning methods": [
-            "Condoms",
-            "Pills"
-          ],
-          "Pain management given": true,
-          "Safe Abortion, Remarks": "Remarks",
-          "Malaria, Death Date": "2015-12-01"
-      }
+      "defaults": {}
     },
     "visitPage": {
       "observationDisplay": {
@@ -71,3 +62,5 @@
     }
   }
 }
+
+
