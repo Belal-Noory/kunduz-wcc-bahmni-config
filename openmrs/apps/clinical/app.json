@@ -42,6 +42,11 @@
     "visitTypeForRetrospectiveEntries": "OPD",
     "maxConceptSetLevels": 5,
     "allowOnlyCodedDiagnosis": false,
+    "adtNavigationConfig": {
+      "privilege": "",
+      "forwardUrl": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}",
+      "title": "Go to IPD dashboard"
+    },
     "conceptSetUI": {
       "Chief Complaint Data": {
         "autocomplete":true,
