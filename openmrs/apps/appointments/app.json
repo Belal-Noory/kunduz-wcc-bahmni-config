@@ -9,16 +9,16 @@
   ],
   "config": {
     "minCharLengthToTriggerPatientSearch": 3,
-    "enableSpecialities": true,
-    "startOfWeek": 2,
+    "enableSpecialities": false,
+    "startOfWeek": 7,
     "weekStart": "isoWeek",
-    "calendarSlotDuration": "00:10:00",
+    "calendarSlotDuration": "00:05:00",
     "calendarSlotLabelInterval": "00:30:00",
-    "startOfDay":"09:00",
-    "endOfDay":"19:00",
+    "startOfDay":"07:00",
+    "endOfDay":"17:00",
     "printListViewTemplateUrl": "/bahmni_config/openmrs/apps/appointments/printListView.html",
     "enableServiceTypes": false,
-    "enableCalendarView": true,
+    "enableCalendarView": false,
     "isServiceOnAppointmentEditable": false,
     "colorsForAppointmentService": [
       "#006400",
@@ -47,10 +47,11 @@
       "#008000",
       "#FFC0CB"
     ],
-    "allowedActions": ["CheckedIn", "Completed", "Missed", "Cancelled"],
+    "allowedActions": ["Scheduled", "CheckedIn", "Completed", "Missed", "Cancelled"],
     "allowedActionsByStatus": {
       "Scheduled": ["CheckedIn", "Missed", "Cancelled"],
-      "CheckedIn": ["Completed", "Missed", "Cancelled"]
+      "CheckedIn": ["Scheduled", "Completed", "Missed", "Cancelled"],
+      "Completed": ["Scheduled", "CheckedIn", "Missed", "Cancelled"]
     },
     "colorsForListView": {
       "Missed": "#fceab6",
@@ -58,3 +59,5 @@
     }
   }
 }
+
+
