@@ -1,0 +1,3 @@
+Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Absolute low,Absolute high,Answers,Members,Allow decimals,Units,_version:1,_order:1400
+,,forms.woundSpecific.size,Size,,ConvSet,N/A,,,,clinical.woundSpecific.size.length;clinical.woundSpecific.size.width;clinical.woundSpecific.size.depth,,,,
+,,forms.woundSpecific.moisture,Moisture,,ConvSet,N/A,,,,clinical.woundSpecific.moisture.excudate;clinical.woundSpecific.moisture.type,,,,
