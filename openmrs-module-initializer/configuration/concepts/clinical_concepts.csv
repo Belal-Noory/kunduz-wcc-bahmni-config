@@ -93,7 +93,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.woundSpecific.tissue.fibrin,Fibrin,,Misc,N/A,,,,,,,,
 ,,clinical.woundSpecific.tissue.necrosis,Necrosis,,Misc,N/A,,,,,,,,
 ,,clinical.woundSpecific.tissue.hypergranulation,Hypergranulation,,Misc,N/A,,,,,,,,
-,,clinical.woundSpecific.tissue.na,N/A,,Misc,N/A,,,,,,
+,,clinical.woundSpecific.tissue.na,N/A,,Misc,N/A,,,,,,,,
 ,,clinical.woundSpecific.tissue,Tissue,,Question,Coded,,,clinical.woundSpecific.tissue.granulation;clinical.woundSpecific.tissue.epithelialization;clinical.woundSpecific.tissue.fibrin;clinical.woundSpecific.tissue.necrosis;clinical.woundSpecific.tissue.hypergranulation;clinical.woundSpecific.tissue.na,,,,,
 ,,clinical.woundSpecific.infection.healing,Healing and not infected,,Misc,N/A,,,,,,,,
 ,,clinical.woundSpecific.infection.nonHealing,Non-healing/Signs of infection,,Misc,N/A,,,,,,,,
