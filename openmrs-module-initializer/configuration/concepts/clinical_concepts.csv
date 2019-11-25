@@ -181,7 +181,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.triage.heart_rate,Heart Rate,,Question,Numeric,,,,,,,,
 ,,clinical.triage.heart_rate_score,Heart Rate Score,,Question,Numeric,,,,,,,,
 ,,clinical.triage.systolic_BP,Systolic BP,,Question,Numeric,,,,,,,,
-,,clinical.triage.systolic_BP_score,Systolic BP Score,,Question,Numeric,,,,,,,
+,,clinical.triage.systolic_BP_score,Systolic BP Score,,Question,Numeric,,,,,,,,
 51d629ed-121f-4eb4-9792-d5ff7809a2fe,,clinical.triage.temperature,Temperature,,Question,Numeric,,,,,,,,
 5cc98bbb-97ca-4079-920f-056561065dd1,,clinical.triage.temperature_score,Temperature Score,,Question,Numeric,,,,,,,,,
 ,,clinical.triage.avpu.a,A,,Misc,N/A,,,,,,,,
