@@ -1,0 +1,13 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>SchedulerMarksComplete</property>
+      <value>true</value>
+    </globalProperty>
+    <globalProperty>
+      <property>SchedulerMarksMissed</property>
+      <value>true</value>
+    </globalProperty>
+  </globalProperties>
+</config>
+
