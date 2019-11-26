@@ -55,8 +55,35 @@
         "durationRequired": false,
         "allowAddMore": true
       },
-      "forms.assessment.woundSpecific" :{
+      "forms.assessment.woundSpecific": {
         "allowAddMore": true
+      },
+      "forms.follow_up.woundSpecific": {
+        "allowAddMore": true
+      },
+      "forms.triage.tews.mobility": {
+        "isTabular": true
+      },
+      "forms.triage.tews.respiratory_rate": {
+        "isTabular": true
+      },
+      "forms.triage.tews.heart_rate": {
+        "isTabular": true
+      },
+      "forms.triage.tews.systolic_BP": {
+        "isTabular": true
+      },
+      "forms.triage.tews.temperature": {
+        "isTabular": true
+      },
+      "forms.triage.tews.avpu": {
+        "isTabular": true
+      },
+      "forms.triage.tews.trauma": {
+        "isTabular": true
+      },
+      "forms.woundSpecific.size": {
+        "isTabular": true
       },
       "defaults": {}
     },
