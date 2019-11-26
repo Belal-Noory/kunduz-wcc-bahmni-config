@@ -47,7 +47,12 @@ Bahmni.ConceptSet.FormConditions.rules = {};
     question: 'clinical.woundSpecific.periwound_protection',
     determiningAnswer: 'clinical.woundSpecific.periwound_protection.other',
     otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
-  }
+  },
+  {
+    question: 'forms.discharge.outcome',
+    determiningAnswer: 'forms.discharge.outcome.lostFU',
+    otherQuestion: 'forms.discharge.reasonLostFU'
+  },
 ].forEach(field => {
   makeCondition(field.question, field.determiningAnswer, field.otherQuestion)
 })
