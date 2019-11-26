@@ -1,98 +1,116 @@
 {
-  "id": "bahmni.clinical",
-  "extensionPoints": [
-    {
-      "id": "org.bahmni.clinical.consultation.board",
-      "description": "Bahmni Clinical Consultation Page"
-    },
-    {
-      "id": "org.bahmni.clinical.conceptSetGroup.*",
-      "description": "Define conceptsets part of a conceptset group"
-    },
-    {
-      "id": "org.bahmni.clinical.orders",
-      "description": "Bahmni Orders Page"
-    },
-    {
-      "id": "org.bahmni.patient.search",
-      "description": "Bahmni Patient search, lookups Page"
-    }
-  ],
-  "contextModel": [
-    "patientUuid",
-    "visitUuid"
-  ],
-  "config": {
-    "hideConditions": false,
-    "quickPrints":false,
-    "networkConnectivity" : {
-      "showNetworkStatusMessage": false,
-      "networkStatusCheckInterval": 20000,
-      "locales" : []
-    },
-    "diagnosisStatus": "Inactive",
-    "obsIgnoreList": [
-      "REGISTRATION FEES",
-      "COMMENTS",
-      "Patient file"
+    "id": "bahmni.clinical",
+    "extensionPoints": [{
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
     ],
-    "otherInvestigationsMap": {},
-    "allowConsultationWhenNoOpenVisit": false,
-    "defaultVisitType": "OPD",
-    "visitTypeForRetrospectiveEntries": "OPD",
-    "maxConceptSetLevels": 5,
-    "allowOnlyCodedDiagnosis": false,
-    "adtNavigationConfig": {
-      "privilege": "",
-      "forwardUrl": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}",
-      "title": "Go to IPD dashboard"
-    },
-    "conceptSetUI": {
-      "Chief Complaint Data": {
-        "autocomplete":true,
-        "codedConceptName":"Chief Complaint",
-        "nonCodedConceptName":"Non-Coded Chief Complaint",
-        "durationRequired": false,
-        "allowAddMore": true
-      },
-      "forms.assessment.woundSpecific": {
-        "allowAddMore": true
-      },
-      "forms.follow_up.woundSpecific": {
-        "allowAddMore": true
-      },
-      "forms.triage.tews.mobility": {
-        "isTabular": true
-      },
-      "forms.triage.tews.respiratory_rate": {
-        "isTabular": true
-      },
-      "forms.triage.tews.heart_rate": {
-        "isTabular": true
-      },
-      "forms.triage.tews.systolic_BP": {
-        "isTabular": true
-      },
-      "forms.triage.tews.temperature": {
-        "isTabular": true
-      },
-      "forms.triage.tews.avpu": {
-        "isTabular": true
-      },
-      "forms.triage.tews.trauma": {
-        "isTabular": true
-      },
-      "forms.woundSpecific.size": {
-        "isTabular": true
-      },
-      "defaults": {}
-    },
-    "visitPage": {
-      "observationDisplay": {
-        "conceptNames": []
-      }
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "hideConditions": false,
+        "quickPrints": false,
+        "networkConnectivity": {
+            "showNetworkStatusMessage": false,
+            "networkStatusCheckInterval": 20000,
+            "locales": []
+        },
+        "diagnosisStatus": "Inactive",
+        "obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
+        ],
+        "otherInvestigationsMap": {},
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "visitTypeForRetrospectiveEntries": "OPD",
+        "maxConceptSetLevels": 5,
+        "allowOnlyCodedDiagnosis": false,
+        "adtNavigationConfig": {
+            "privilege": "",
+            "forwardUrl": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}",
+            "title": "Go to IPD dashboard"
+        },
+        "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete": true,
+                "codedConceptName": "Chief Complaint",
+                "nonCodedConceptName": "Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            },
+            "forms.assessment.woundSpecific": {
+                "allowAddMore": true
+            },
+            "forms.follow_up.woundSpecific": {
+                "allowAddMore": true
+            },
+            "forms.triage.tews.mobility": {
+                "isTabular": true
+            },
+            "forms.triage.tews.respiratory_rate": {
+                "isTabular": true
+            },
+            "forms.triage.tews.heart_rate": {
+                "isTabular": true
+            },
+            "forms.triage.tews.systolic_BP": {
+                "isTabular": true
+            },
+            "forms.triage.tews.temperature": {
+                "isTabular": true
+            },
+            "forms.triage.tews.avpu": {
+                "isTabular": true
+            },
+            "forms.triage.tews.trauma": {
+                "isTabular": true
+            },
+            "forms.woundSpecific.size": {
+                "isTabular": true
+            },
+            "clinical.medication": {
+                "multiSelect": true
+            },
+            "clinical.pain.characteristic": {
+                "multiSelect": true
+            },
+            "clinical.pain.treatment": {
+                "multiSelect": true
+            },
+            "clinical.psychosocialFactors": {
+                "multiSelect": true
+            },
+            "clinical.comorbidities": {
+                "multiSelect": true
+            },
+            "clinical.increasedInfectionRisk": {
+                "multiSelect": true
+            },
+            "clinical.woundSpecific": {
+                "multiSelect": true
+            },
+            "defaults": {}
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
+            }
+        }
     }
-  }
 }
-
-
