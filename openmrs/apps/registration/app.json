@@ -18,7 +18,7 @@
     "config": {
         "forwardUrlsForVisitTypes": [{
             "visitType": "OPD",
-            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations",
+            "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations",
             "translationKey": "Start OPD Visit",
             "shortcutKey": "c"
         }],
