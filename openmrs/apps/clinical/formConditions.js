@@ -30,8 +30,18 @@ Bahmni.ConceptSet.FormConditions.rules = {};
     },
     {
         question: 'clinical.woundSpecific.type',
-        determiningAnswer: 'clinical.woundSpecific.type.other',
-        otherQuestion: 'clinical.woundSpecific.type.otherAnswer'
+        determiningAnswer: 'clinical.woundSpecific.type.otherAnswer',
+        otherQuestion: 'clinical.woundSpecific.type.other'
+    },
+    {
+        question: 'clinical.woundSpecific.periwound',
+        determiningAnswer: 'clinical.woundSpecific.periwound.otherAnswer',
+        otherQuestion: 'clinical.woundSpecific.periwound.other'
+    },
+    {
+        question: 'clinical.woundSpecific.wound_disinfection',
+        determiningAnswer: 'clinical.woundSpecific.wound_disinfection.other',
+        otherQuestion: 'clinical.woundSpecific.wound_disinfection.otherDetail'
     }
 ].forEach(field => {
     makeCondition(field.question, field.determiningAnswer, field.otherQuestion)
