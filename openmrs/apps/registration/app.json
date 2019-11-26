@@ -1,76 +1,72 @@
 {
-  "id": "bahmni.registration",
-  "instanceOf":"bahmni.template.registration",
-  "description": "Bahmni Patient Registration App",
-  "extensionPoints": [
-    {
-      "id": "org.bahmni.registration.patient.search.result.action",
-      "description": "Bahmni Patient Search Result Action"
-    },
-    {
-      "id": "org.bahmni.registration.patient.next",
-      "description": "After Bahmni Patient Registration, forward url configuration"
-    }
-  ],
-  "contextModel": [
-    "patientUuid",
-    "activeVisitUuid"
-  ],
-  "config" : {
-    "forwardUrlsForVisitTypes": [
-      {
-        "visitType": "OPD",
-        "forwardUrl": "../registration/index.html#/search",
-        "translationKey": "Start OPD Visit",
-        "shortcutKey": "c"
-      }
+    "id": "bahmni.registration",
+    "instanceOf": "bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [{
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        }
     ],
-    "minCharRequireToSearch": 3,
-    "dobMandatory": true,
-    "showStartVisitButton": true,
-    "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-    "defaultVisitType": "OPD",
-    "showMiddleName": false,
-    "showLastName": true,
-    "isLastNameMandatory": true,
-    "showSaveConfirmDialog": false,
-    "showBirthTime": false,
-    "disablePhotoCapture": true,
-    "showCasteSameAsLastNameCheckbox": false,
-    "patientInformation": {
-      "additionalPatientInformation": {
-        "title": "Additional patient information",
-        "translationKey": "Additional patient information",
-        "attributes": [
-          "reg.phoneNumber",
-          "reg.dateFirstVisit"
-        ],
-        "expanded": true
-      },
-      "LocationInformation": {
-        "title": "Location information",
-        "translationKey": "Location information",
-        "attributes": [
-          "reg.province",
-          "reg.provinceOther",
-          "reg.district",
-          "reg.village"
-        ],
-        "expanded": true
-      },
-      "followupInformation": {
-        "title": "Follow-up information",
-        "translationKey": "Follow-up information",
-        "attributes": [
-          "reg.followupStatus",
-          "reg.followupStatusComment"
-        ],
-        "expanded": true
-      }
-    },
-    "mandatoryPersonAttributes": [ ],
-    "fieldValidation" : {},
-    "patientSearch": {}
-  }
+    "contextModel": [
+        "patientUuid",
+        "activeVisitUuid"
+    ],
+    "config": {
+        "forwardUrlsForVisitTypes": [{
+            "visitType": "OPD",
+            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations",
+            "translationKey": "Start OPD Visit",
+            "shortcutKey": "c"
+        }],
+        "minCharRequireToSearch": 3,
+        "dobMandatory": true,
+        "showStartVisitButton": true,
+        "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+        "defaultVisitType": "OPD",
+        "showMiddleName": false,
+        "showLastName": true,
+        "isLastNameMandatory": true,
+        "showSaveConfirmDialog": false,
+        "showBirthTime": false,
+        "disablePhotoCapture": true,
+        "showCasteSameAsLastNameCheckbox": false,
+        "patientInformation": {
+            "additionalPatientInformation": {
+                "title": "Additional patient information",
+                "translationKey": "Additional patient information",
+                "attributes": [
+                    "reg.phoneNumber",
+                    "reg.dateFirstVisit"
+                ],
+                "expanded": true
+            },
+            "LocationInformation": {
+                "title": "Location information",
+                "translationKey": "Location information",
+                "attributes": [
+                    "reg.province",
+                    "reg.provinceOther",
+                    "reg.district",
+                    "reg.village"
+                ],
+                "expanded": true
+            },
+            "followupInformation": {
+                "title": "Follow-up information",
+                "translationKey": "Follow-up information",
+                "attributes": [
+                    "reg.followupStatus",
+                    "reg.followupStatusComment"
+                ],
+                "expanded": true
+            }
+        },
+        "mandatoryPersonAttributes": [],
+        "fieldValidation": {},
+        "patientSearch": {}
+    }
 }
-
