@@ -12,7 +12,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.discharge.reasonLostFU.notSatisfied,Not satisfied,,Misc,N/A,,,,,,
 ,,forms.discharge.reasonLostFU.other,Other,,Misc,N/A,,,,,,
 ,,forms.discharge.reasonLostFU,Reason for lost to follow-up,,Question,Coded,forms.discharge.reasonLostFU.reported_healed;forms.discharge.reasonLostFU.no_phone;forms.discharge.reasonLostFU.contact_failed;forms.discharge.reasonLostFU.access_problems;forms.discharge.reasonLostFU.notSatisfied;forms.discharge.reasonLostFU.other,,,,,
-,,forms.discharge.reasonLostFU.otherDetails,Reason for lost to follow-up (if other),,Question,Text,,,,,,
+,,forms.discharge.reasonLostFU.otherDetail,Reason for lost to follow-up (if other),,Question,Text,,,,,,
 ,,forms.discharge.complication.no,No,,Misc,N/A,,,,,,
 ,,forms.discharge.complication.infection,Infection/Non-healing,,Misc,N/A,,,,,,
 ,,forms.discharge.complication.functional,Functional,,Misc,N/A,,,,,,
