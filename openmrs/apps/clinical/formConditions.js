@@ -17,8 +17,7 @@ const makeCondition = (question, determiningAnswer, otherQuestion) => {
 
 Bahmni.ConceptSet.FormConditions.rules = {};
 
-[
-    {
+[{
         question: 'forms.discharge.reasonLostFU',
         determiningAnswer: 'forms.discharge.reasonLostFU.other',
         otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
