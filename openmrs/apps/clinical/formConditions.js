@@ -1,12 +1,17 @@
-const makeCondition = (question, determiningAnswer, otherQuestion) => {
+const makeCondition = (question, determiningAnswers, otherQuestion) => {
   Bahmni.ConceptSet.FormConditions.rules[question] = (formName, formFieldValues) => {
     var conditions = {
       show: [],
       hide: []
     };
 
+    // Careful: if a coded question is shared between forms, and those forms are
+    // opened at the same time, formFieldValues contains an array with the
+    // answer from every form for that question, with no way to distinguish which
+    // value is coming from which form.
+    // Therefore we should not share any coded questions between forms.
     const value = formFieldValues[question];
-    if (value == determiningAnswer) {
+    if (determiningAnswers.some( ans => ans == value )) {
       conditions.show.push(otherQuestion);
     } else {
       conditions.hide.push(otherQuestion);
@@ -20,40 +25,40 @@ Bahmni.ConceptSet.FormConditions.rules = {};
 [
   {
     question: 'forms.discharge.reasonLostFU',
-    determiningAnswer: 'forms.discharge.reasonLostFU.other',
+    determiningAnswers: ['forms.discharge.reasonLostFU.other'],
     otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
   },
   {
     question: 'clinical.pain.treatment',
-    determiningAnswer: 'clinical.pain.treatment.other',
+    determiningAnswers: ['clinical.pain.treatment.other'],
     otherQuestion: 'clinical.pain.treatment.other_details'
   },
   {
     question: 'clinical.woundSpecific.type',
-    determiningAnswer: 'clinical.woundSpecific.type.otherAnswer',
+    determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
     otherQuestion: 'clinical.woundSpecific.type.other'
   },
   {
     question: 'clinical.woundSpecific.periwound',
-    determiningAnswer: 'clinical.woundSpecific.periwound.otherAnswer',
+    determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
     otherQuestion: 'clinical.woundSpecific.periwound.other'
   },
   {
     question: 'clinical.woundSpecific.wound_disinfection',
-    determiningAnswer: 'clinical.woundSpecific.wound_disinfection.other',
+    determiningAnswers: ['clinical.woundSpecific.wound_disinfection.other'],
     otherQuestion: 'clinical.woundSpecific.wound_disinfection.otherDetail'
   },
   {
     question: 'clinical.woundSpecific.periwound_protection',
-    determiningAnswer: 'clinical.woundSpecific.periwound_protection.other',
+    determiningAnswers: ['clinical.woundSpecific.periwound_protection.other'],
     otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
   },
   {
     question: 'forms.discharge.outcome',
-    determiningAnswer: 'forms.discharge.outcome.lostFU',
+    determiningAnswers: ['forms.discharge.outcome.lostFU'],
     otherQuestion: 'forms.discharge.reasonLostFU'
   },
 ].forEach(field => {
-  makeCondition(field.question, field.determiningAnswer, field.otherQuestion)
+  makeCondition(field.question, field.determiningAnswers, field.otherQuestion)
 })
 
