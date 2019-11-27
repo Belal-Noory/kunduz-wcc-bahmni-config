@@ -108,7 +108,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.woundSpecific.moisture.excudate,Excudate,,Question,Coded,,,,,,,clinical.woundSpecific.moisture.excudate.plus;clinical.woundSpecific.moisture.excudate.plusplus;clinical.woundSpecific.moisture.excudate.plusplusplus,,,,,
 ,,clinical.woundSpecific.moisture.type.serous,Serous,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.moisture.type.fibrinous,Fibrinous,,Misc,N/A,,,,,,,,,,,,
-..clinical.woundSpecific.moisture.type.pus,Pus,,Misc,N/A,,,,,,,,
+..clinical.woundSpecific.moisture.type.pus,Pus,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.moisture.type.serosanguinous,Serosanguinous,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.moisture.type.seropurulent,Seropurulent,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.moisture.type.purulent,Purulent,,Misc,N/A,,,,,,,,,,,,
