@@ -24,32 +24,50 @@ Bahmni.ConceptSet.FormConditions.rules = {};
 
 [
   {
+    question: 'forms.assessment.woundSpecific.woundLocation',
+    determiningAnswers: ['clinical.woundSpecific.woundLocation.arm',
+                         'clinical.woundSpecific.woundLocation.hand', 
+                         'clinical.woundSpecific.woundLocation.leg', 
+                         'clinical.woundSpecific.woundLocation.foot'],
+    otherQuestion: 'forms.assessment.woundSpecific.woundLocation.leftRight'
+  },
+  {
     question: 'forms.discharge.reasonLostFU',
     determiningAnswers: ['forms.discharge.reasonLostFU.other'],
     otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
   },
   {
-    question: 'clinical.pain.treatment',
+    question: 'forms.triage.pain.treatment',
     determiningAnswers: ['clinical.pain.treatment.other'],
     otherQuestion: 'clinical.pain.treatment.other_details'
   },
   {
-    question: 'clinical.woundSpecific.type',
+    question: 'forms.follow_up.pain.treatment',
+    determiningAnswers: ['clinical.pain.treatment.other'],
+    otherQuestion: 'clinical.pain.treatment.other_details'
+  },
+  {
+    question: 'forms.assessment.woundSpecific.type',
     determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
     otherQuestion: 'clinical.woundSpecific.type.other'
   },
   {
-    question: 'clinical.woundSpecific.periwound',
+    question: 'forms.assessment.woundSpecific.periwound',
     determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
     otherQuestion: 'clinical.woundSpecific.periwound.other'
   },
   {
-    question: 'clinical.woundSpecific.wound_disinfection',
+    question: 'forms.follow_up.woundSpecific.periwound',
+    determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
+    otherQuestion: 'clinical.woundSpecific.periwound.other'
+  },
+  {
+    question: 'forms.follow_up.woundSpecific.wound_disinfection',
     determiningAnswers: ['clinical.woundSpecific.wound_disinfection.other'],
     otherQuestion: 'clinical.woundSpecific.wound_disinfection.otherDetail'
   },
   {
-    question: 'clinical.woundSpecific.periwound_protection',
+    question: 'forms.follow_up.woundSpecific.periwound_protection',
     determiningAnswers: ['clinical.woundSpecific.periwound_protection.other'],
     otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
   },
