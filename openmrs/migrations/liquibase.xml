@@ -110,7 +110,14 @@
         and b_is_to_a = "Supervisee";
     </sql>
   </changeSet>
-  <changeSet id="27112019_1641" author="R-VdP">
+  <changeSet id="27112019_1730" author="R-VdP">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        select count(*)
+        from scheduler_task_config
+        where schedulable_class="org.openmrs.module.emrapi.adt.CloseStaleVisitsTask";
+      </sqlCheck>
+    </preConditions>
     <comment>Add Bahmni EMR API scheduler which closes stale visits</comment>
     <insert tableName="scheduler_task_config">
       <column name="name" value="Close Stale Visits Task" />
