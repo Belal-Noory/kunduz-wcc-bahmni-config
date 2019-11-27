@@ -1,5 +1,5 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Absolute low,Absolute high,Answers,Members,Allow decimals,Units,_version:1,_order:1500
-,,forms.triage.color,Triage,,Question,Coded,,,,,,,clinical.triage.green;clinical.triage.yellow;clinical.triage.orange;clinical.triage.red,,,,,
+,,forms.triage.color,Triage,,Question,Coded,,,clinical.triage.green;clinical.triage.yellow;clinical.triage.orange;clinical.triage.red,,,,,
 ,,forms.triage.nutrition,Nutrition,,ConvSet,N/A,,,,clinical.nutrition.weight;clinical.nutrition.height;clinical.nutrition.bmi;clinical.nutrition.muac,,,,
 ,,forms.triage.pain,Pain,,ConvSet,N/A,,,,clinical.pain.score;clinical.pain.characteristic;clinical.pain.treatment;clinical.pain.treatment.other_details,,,,
 ,,forms.triage.prophylaxis,Prophylaxis vaccine,,ConvSet,N/A,,,,clinical.prophylaxis.ttVaccine;clinical.prophylaxis.dateVat,,,,
