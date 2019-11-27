@@ -1,0 +1,10 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>emrapi.visitExpireHours</property>
+      <!-- At midnight, we close every visit that was started before 16h. -->
+      <value>8</value>
+    </globalProperty>
+  </globalProperties>
+</config>
+
