@@ -110,5 +110,20 @@
         and b_is_to_a = "Supervisee";
     </sql>
   </changeSet>
+  <changeSet id="27112019_1641" author="R-VdP">
+    <comment>Add Bahmni EMR API scheduler which closes stale visits</comment>
+    <insert tableName="scheduler_task_config">
+      <column name="name" value="Close Stale Visits Task" />
+      <column name="description" value="Auto close visit task after number of hours specified by emrapi.visitExpireHours" />
+      <column name="schedulable_class" value="org.openmrs.module.emrapi.adt.CloseStaleVisitsTask" />
+      <column name="start_on_startup" valueBoolean="true" />
+      <column name="start_time_pattern" value="MM/dd/yyyy HH:mm:ss" />
+      <column name="start_time" valueDate="2014-04-30T23:59:59" />
+      <column name="repeat_interval" value="86400" />
+      <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+      <column name="created_by" value="1" />
+      <column name="uuid" valueComputed="uuid()" />
+    </insert>
+  </changeSet>
 </databaseChangeLog>
 
