@@ -1,4 +1,5 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Absolute low,Absolute high,Answers,Members,Allow decimals,Units,_version:1,_order:1500
+,,forms.triage.color,Triage,,Question,Coded,,,,,,,clinical.triage.green;clinical.triage.yellow;clinical.triage.orange;clinical.triage.red,,,,,
 ,,forms.triage.nutrition,Nutrition,,ConvSet,N/A,,,,clinical.nutrition.weight;clinical.nutrition.height;clinical.nutrition.bmi;clinical.nutrition.muac,,,,
 ,,forms.triage.pain,Pain,,ConvSet,N/A,,,,clinical.pain.score;clinical.pain.characteristic;clinical.pain.treatment;clinical.pain.treatment.other_details,,,,
 ,,forms.triage.prophylaxis,Prophylaxis vaccine,,ConvSet,N/A,,,,clinical.prophylaxis.ttVaccine;clinical.prophylaxis.dateVat,,,,
@@ -9,5 +10,5 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.triage.tews.temperature,Temperature,,ConvSet,N/A,,,,clinical.triage.temperature;clinical.triage.temperature_score,,,,
 ,,forms.triage.tews.avpu,AVPU,,ConvSet,N/A,,,,clinical.triage.avpu;clinical.triage.avpu_score,,,,
 ,,forms.triage.tews.trauma,Trauma,,ConvSet,N/A,,,,clinical.triage.trauma;clinical.triage.trauma_score,,,,
-,,forms.triage.tews,TEWS Score,,ConvSet,N/A,,,,forms.triage.tews.mobility;forms.triage.tews.respiratory_rate;forms.triage.tews.heart_rate;forms.triage.tews.systolic_BP;forms.triage.tews.temperature;forms.triage.tews.avpu;forms.triage.tews.trauma;clinical.triage.tews_total_score;clinical.triage.pregnancy;clinical.triage;clinical.triage.history,,,,
+,,forms.triage.tews,TEWS Score,,ConvSet,N/A,,,,forms.triage.tews.mobility;forms.triage.tews.respiratory_rate;forms.triage.tews.heart_rate;forms.triage.tews.systolic_BP;forms.triage.tews.temperature;forms.triage.tews.avpu;forms.triage.tews.trauma;clinical.triage.tews_total_score;clinical.triage.pregnancy;forms.triage.color;clinical.triage.history,,,,
 ,,forms.triage,Triage,,ConvSet,N/A,,,,forms.triage.nutrition;clinical.medication;forms.triage.pain;forms.triage.prophylaxis;clinical.psychosocialFactors;clinical.comorbidities;clinical.increasedInfectionRisk;forms.triage.tews,,,,
