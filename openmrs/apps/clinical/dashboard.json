@@ -87,7 +87,8 @@
                     "pivotTable": {
                         "numberOfVisits": "30",
                         "groupBy": "encounters",
-                        "obsConcepts": ["forms.follow_up.woundSpecific.pain",
+                        "obsConcepts": ["clinical.pain.score",
+                            "forms.follow_up.pain.treatment",
                             "forms.follow_up.woundSpecific.tissue",
                             "forms.follow_up.woundSpecific.infection",
                             "forms.follow_up.woundSpecific.moisture",
