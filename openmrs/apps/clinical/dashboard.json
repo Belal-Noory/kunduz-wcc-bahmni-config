@@ -54,11 +54,7 @@
                 "dashboardConfig": {
                     "conceptNames": ["forms.follow_up.woundSpecific.moisture.type", "forms.follow_up.woundSpecific.moisture.excudate"],
                     "numberOfVisits": "10",
-                    "showGroupDateTime": false
-                },
-                "expandedViewConfig": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.moisture.type", "forms.follow_up.woundSpecific.moisture.excudate"],
-                    "showDetailsButton": true,
+                    "showGroupDateTime": false,
                     "pivotTable": {
                         "numberOfVisits": "10",
                         "groupBy": "encounters",
