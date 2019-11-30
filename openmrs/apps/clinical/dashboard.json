@@ -48,20 +48,24 @@
                 "formGroup": [],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             },
-            "atAdmission": {
-                "type": "observation",
-                "title": "At Admission",
-                "config": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.moisture.excudate", "forms.follow_up.woundSpecific.moisture.type"],
-                    "scope": "initial"
-                }
-            },
-            "atDischarge": {
-                "type": "observation",
-                "title": "At Discharge",
-                "config": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.moisture.type"],
-                    "scope": "latest"
+            "someNiceName": { // A unique name
+                "translationKey": "vitals", // Mandatory. Should be an
+                "isObservation": true,
+                "dashboardConfig": {
+                    "conceptNames": ["forms.follow_up.woundSpecific.moisture.type", "forms.follow_up.woundSpecific.moisture.excudate"],
+                    "scope": "latest",
+                    "showGroupDateTime": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": ["forms.follow_up.woundSpecific.moisture.type", "forms.follow_up.woundSpecific.moisture.excudate"],
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "4",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["forms.follow_up.woundSpecific.moisture.type", "forms.follow_up.woundSpecific.moisture.excudate"],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
                 }
             }
         }
