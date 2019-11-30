@@ -46,6 +46,18 @@
     "label": "All",
     "order": 5,
     "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchMissedAppointmentYesterday": {
+    "id": "bahmni.clinical.patients.search.missedAppointmentsYesterday",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.missed_appointments_yesterday",
+      "translationKey": "Missed appointment yesterday",
+      "forwardUrl": "../registration/index.html#/patient/{{patientUuid}}/dashboard"
+    },
+    "order": 10,
+    "requiredPrivilege": "app:clinical"
   }
 }
 

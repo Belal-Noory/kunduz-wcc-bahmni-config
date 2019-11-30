@@ -1,0 +1,46 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>emrapi.sqlSearch.missed_appointments_yesterday</property>
+      <value><![CDATA[
+        select concat(pn.given_name,' ', pn.family_name) as name,
+               pi.identifier as identifier,
+               concat("", p.uuid) as uuid,
+               null as activeVisitUuid,
+               null as hasBeenAdmitted,
+               pa.value as telephoneNumber
+        from person p
+        inner join person_name pn
+          on p.person_id = pn.person_id and pn.voided = 0
+        inner join patient_identifier pi
+          on p.person_id = pi.patient_id
+        inner join person_attribute pa
+          on pa.person_id = p.person_id and pa.voided = 0
+        inner join patient_appointment a
+          on a.patient_id = p.person_id
+        where a.status = 'Missed'
+          and datediff(curdate(), date(a.start_date_time)) = 1
+          and a.voided = 0
+          and not exists (select 1
+                          from patient_appointment a2
+                          where a2.patient_appointment_id <> a.patient_appointment_id
+                            and a2.start_date_time > a.start_date_time
+                            and a2.voided = 0)
+          and not exists (select 1
+                          from obs o
+                          inner join concept_name cn
+                            on cn.concept_id = o.concept_id
+                          where o.person_id = p.person_id
+                            and cn.name = 'forms.discharge.endOfTreatment'
+                            and cn.concept_name_type = 'FULLY_SPECIFIED'
+                            and cn.locale = 'en'
+                            and o.voided = 0
+                            and date(o.value_datetime) >= date(a.start_date_time))
+          and pa.person_attribute_type_id = (select person_attribute_type_id
+                                             from person_attribute_type
+                                             where name = 'reg.phoneNumber');
+      ]]></value>
+    </globalProperty>
+  </globalProperties>
+</config>
+
