@@ -22,6 +22,7 @@
             "translationKey": "Start OPD Visit",
             "shortcutKey": "c"
         }],
+        "showEnterID": false,
         "minCharRequireToSearch": 3,
         "dobMandatory": true,
         "showStartVisitButton": true,
