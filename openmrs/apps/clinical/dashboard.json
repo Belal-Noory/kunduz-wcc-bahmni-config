@@ -87,8 +87,10 @@
                     "pivotTable": {
                         "numberOfVisits": "30",
                         "groupBy": "encounters",
-                        "obsConcepts": ["clinical.pain.score",
-                            "forms.follow_up.pain.treatment",
+                        "obsConcepts": ["clinical.woundSpecific.woundNumber",
+                            "clinical.woundSpecific.size.length",
+                            "clinical.woundSpecific.size.width",
+                            "clinical.woundSpecific.size.depth",
                             "forms.follow_up.woundSpecific.tissue",
                             "forms.follow_up.woundSpecific.infection",
                             "forms.follow_up.woundSpecific.moisture",
@@ -99,7 +101,16 @@
                             "forms.follow_up.woundSpecific.wound_disinfection",
                             "forms.follow_up.woundSpecific.dressing",
                             "forms.follow_up.woundSpecific.periwound_protection",
-                            "forms.follow_up.woundSpecific.fixation"
+                            "forms.follow_up.woundSpecific.fixation",
+                            "clinical.pain.score",
+                            "forms.follow_up.pain.characteristic",
+                            "forms.follow_up.pain.treatment",
+                            "linical.woundSpecific.pain.treatment_received.dosage",
+                            "clinical.woundSpecific.pain.treatment_received.time",
+                            "clinical.woundSpecific.antibiotic.name",
+                            "clinical.woundSpecific.antibiotic.dosage",
+                            "clinical.woundSpecific.antibiotic.start_of_cycle",
+                            "clinical.woundSpecific.antibiotic.end_of_cycle"
                         ],
                         "drugConcepts": "",
                         "labConcepts": ""
