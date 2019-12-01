@@ -64,7 +64,7 @@
                     "templateName": "forms.follow_up",
                     "groupByConcept": "forms.follow_up.woundSpecific.woundNumber",
                     "type": "DstExtension",
-                    "conceptNames": [
+                    "conceptNames": ["forms.follow_up.woundSpecific.woundNumber",
                         "forms.follow_up.woundSpecific.painBeforDressing",
                         "forms.follow_up.woundSpecific.tissue",
                         "forms.follow_up.woundSpecific.infection",
