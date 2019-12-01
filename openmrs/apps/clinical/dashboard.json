@@ -81,7 +81,13 @@
                         "forms.follow_up.woundSpecific.periwound_protection",
                         "forms.follow_up.woundSpecific.fixation",
                         "forms.follow_up.woundSpecific.painAfterDressing"
-                    ]
+                    ],
+                    "isEditable": true,
+                    "obsDelimiter": "\n"
+                },
+                "expandedViewConfig": {
+                    "templateName": "forms.follow_up",
+                    "groupByConcept": "forms.follow_up.woundSpecific.woundNumber"
                 }
             }
         }
