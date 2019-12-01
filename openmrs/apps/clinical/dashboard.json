@@ -87,7 +87,7 @@
                     "obsDelimiter": "\n"
                 },
                 "expandedViewConfig": {
-                    "templateName": "forms.follow_upT",
+                    "templateName": "forms.follow_up",
                     "groupByConcept": "clinical.woundSpecific.woundNumber"
                 }
             }
