@@ -61,8 +61,8 @@
                     "initialCount": 1,
                     "latestCount": 10,
                     "pivotOn": "column",
-                    "templateName": "forms.follow_up",
-                    "groupByConcept": "forms.follow_up.woundSpecific.painBeforDressing",
+                    "templateName": "forms.follow_up.woundSpecific.woundNumber",
+                    "groupByConcept": "forms.follow_up",
                     "type": "DstExtension",
                     "conceptNames": ["forms.follow_up.woundSpecific.painBeforDressing",
                         "forms.follow_up.woundSpecific.tissue",
@@ -86,8 +86,8 @@
                     "obsDelimiter": "\n"
                 },
                 "expandedViewConfig": {
-                    "templateName": "forms.follow_up",
-                    "groupByConcept": "forms.follow_up.woundSpecific.painBeforDressing"
+                    "templateName": "forms.follow_up.woundSpecific.woundNumber",
+                    "groupByConcept": "forms.follow_up"
                 }
             }
         }
