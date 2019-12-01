@@ -48,11 +48,24 @@
                 "formGroup": [],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             },
-            "someNiceName": {
-                "translationKey": "vitals",
-                "isObservation": true,
+            "FollowUp": {
+                "translationKey": "Follow Up Sheet",
+                "type": "obsToObsFlowSheet",
+                "displayOrder": 4,
+                "displayType": "Full-Page",
+                "rotateInPrint": false,
+                "headingConceptSource": "Abbreviation",
+                "dataConceptSource": "Abbreviation",
                 "dashboardConfig": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.pain",
+                    "numberOfVisits": 12,
+                    "initialCount": 1,
+                    "latestCount": 10,
+                    "pivotOn": "column",
+                    "templateName": "forms.follow_up",
+                    "groupByConcept": "clinical.woundSpecific.woundNumber",
+                    "type": "DstExtension",
+                    "conceptNames": [
+                        "forms.follow_up.woundSpecific.painBeforDressing",
                         "forms.follow_up.woundSpecific.tissue",
                         "forms.follow_up.woundSpecific.infection",
                         "forms.follow_up.woundSpecific.moisture",
@@ -60,61 +73,22 @@
                         "forms.follow_up.woundSpecific.periwound",
                         "forms.follow_up.woundSpecific.wound_cleansing",
                         "forms.follow_up.woundSpecific.skin_cleansing",
+                        "forms.follow_up.suture",
+                        "forms.follow_up.drainage_of_abscess",
+                        "forms.follow_up.removal_suture",
+                        "forms.follow_up.removal_drain",
                         "forms.follow_up.woundSpecific.wound_disinfection",
                         "forms.follow_up.woundSpecific.dressing",
                         "forms.follow_up.woundSpecific.periwound_protection",
-                        "forms.follow_up.woundSpecific.fixation"
+                        "forms.follow_up.woundSpecific.fixation",
+                        "forms.follow_up.woundSpecific.painAfterDressing"
                     ],
-
-                    "scope": "latest",
-                    "showGroupDateTime": false
+                    "isEditable": true,
+                    "obsDelimiter": "\n"
                 },
                 "expandedViewConfig": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.pain",
-                        "forms.follow_up.woundSpecific.tissue",
-                        "forms.follow_up.woundSpecific.infection",
-                        "forms.follow_up.woundSpecific.moisture",
-                        "forms.follow_up.woundSpecific.edges",
-                        "forms.follow_up.woundSpecific.periwound",
-                        "forms.follow_up.woundSpecific.wound_cleansing",
-                        "forms.follow_up.woundSpecific.skin_cleansing",
-                        "forms.follow_up.woundSpecific.wound_disinfection",
-                        "forms.follow_up.woundSpecific.dressing",
-                        "forms.follow_up.woundSpecific.periwound_protection",
-                        "forms.follow_up.woundSpecific.fixation"
-                    ],
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "30",
-                        "groupBy": "encounters",
-                        "obsConcepts": ["clinical.woundSpecific.woundNumber",
-                            "clinical.woundSpecific.size.length",
-                            "clinical.woundSpecific.size.width",
-                            "clinical.woundSpecific.size.depth",
-                            "forms.follow_up.woundSpecific.tissue",
-                            "forms.follow_up.woundSpecific.infection",
-                            "forms.follow_up.woundSpecific.moisture",
-                            "forms.follow_up.woundSpecific.edges",
-                            "forms.follow_up.woundSpecific.periwound",
-                            "forms.follow_up.woundSpecific.wound_cleansing",
-                            "forms.follow_up.woundSpecific.skin_cleansing",
-                            "forms.follow_up.woundSpecific.wound_disinfection",
-                            "forms.follow_up.woundSpecific.dressing",
-                            "forms.follow_up.woundSpecific.periwound_protection",
-                            "forms.follow_up.woundSpecific.fixation",
-                            "clinical.pain.score",
-                            "forms.follow_up.pain.characteristic",
-                            "forms.follow_up.pain.treatment",
-                            "linical.woundSpecific.pain.treatment_received.dosage",
-                            "clinical.woundSpecific.pain.treatment_received.time",
-                            "clinical.woundSpecific.antibiotic.name",
-                            "clinical.woundSpecific.antibiotic.dosage",
-                            "clinical.woundSpecific.antibiotic.start_of_cycle",
-                            "clinical.woundSpecific.antibiotic.end_of_cycle"
-                        ],
-                        "drugConcepts": "",
-                        "labConcepts": ""
-                    }
+                    "templateName": "forms.follow_upT",
+                    "groupByConcept": "clinical.woundSpecific.woundNumber"
                 }
             }
         }
