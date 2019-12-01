@@ -52,7 +52,7 @@
                 "translationKey": "Follow Up Sheet",
                 "type": "obsToObsFlowSheet",
                 "displayOrder": 4,
-                "displayType": "Full-Page",
+                "displayType": "Half-Page",
                 "rotateInPrint": false,
                 "headingConceptSource": "Abbreviation",
                 "dataConceptSource": "Abbreviation",
@@ -62,10 +62,9 @@
                     "latestCount": 10,
                     "pivotOn": "column",
                     "templateName": "forms.follow_up",
-                    "groupByConcept": "forms.follow_up.woundSpecific.woundNumber",
+                    "groupByConcept": "forms.follow_up.woundSpecific.painBeforDressing",
                     "type": "DstExtension",
-                    "conceptNames": ["forms.follow_up.woundSpecific.woundNumber",
-                        "forms.follow_up.woundSpecific.painBeforDressing",
+                    "conceptNames": ["forms.follow_up.woundSpecific.painBeforDressing",
                         "forms.follow_up.woundSpecific.tissue",
                         "forms.follow_up.woundSpecific.infection",
                         "forms.follow_up.woundSpecific.moisture",
@@ -88,7 +87,7 @@
                 },
                 "expandedViewConfig": {
                     "templateName": "forms.follow_up",
-                    "groupByConcept": "forms.follow_up.woundSpecific.woundNumber"
+                    "groupByConcept": "forms.follow_up.woundSpecific.painBeforDressing"
                 }
             }
         }
