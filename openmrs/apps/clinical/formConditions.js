@@ -37,7 +37,8 @@ Bahmni.ConceptSet.FormConditions.rules = {};
             'clinical.woundSpecific.woundLocation.hand',
             'clinical.woundSpecific.woundLocation.leg',
             'clinical.woundSpecific.woundLocation.foot',
-            'clinical.woundSpecific.woundLocation.thorax'
+            'clinical.woundSpecific.woundLocation.thorax',
+            'clinical.woundSpecific.woundLocation.head'
         ],
         otherQuestion: 'forms.assessment.woundSpecific.woundLocation.frontBack'
     },
