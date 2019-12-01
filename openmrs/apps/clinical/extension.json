@@ -53,8 +53,9 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.missed_appointments_yesterday",
+      "view": "tabular",
       "translationKey": "Missed appointment yesterday",
-      "forwardUrl": "../registration/index.html#/patient/{{patientUuid}}/dashboard"
+      "forwardUrl": "../registration/index.html#/patient/{{patientUuid}}"
     },
     "order": 10,
     "requiredPrivilege": "app:clinical"
