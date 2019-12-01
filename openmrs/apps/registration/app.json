@@ -56,12 +56,30 @@
                 ],
                 "expanded": true
             },
-            "followupInformation": {
-                "title": "Follow-up information",
-                "translationKey": "Follow-up information",
+            "followupInformationOne": {
+                "title": "Follow-up information 1",
+                "translationKey": "Follow-up information 1",
                 "attributes": [
-                    "reg.followupStatus",
-                    "reg.followupStatusComment"
+                    "reg.followupStatusOne",
+                    "reg.followupStatusOneComment"
+                ],
+                "expanded": true
+            },
+            "followupInformationTwo": {
+                "title": "Follow-up information 2",
+                "translationKey": "Follow-up information 2",
+                "attributes": [
+                    "reg.followupStatusTwo",
+                    "reg.followupStatusTwoComment"
+                ],
+                "expanded": true
+            },
+            "followupInformationThree": {
+                "title": "Follow-up information 3",
+                "translationKey": "Follow-up information 3",
+                "attributes": [
+                    "reg.followupStatusThree",
+                    "reg.followupStatusThreeComment"
                 ],
                 "expanded": true
             }

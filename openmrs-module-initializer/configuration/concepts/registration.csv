@@ -1,4 +1,4 @@
-Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,Allow decimals,Units,_version:1,_order:1100
+Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,Allow decimals,Units,_version:1,_order:1200
 ,,reg.province.kunduz,Kunduz,,Misc,N/A,,,,,,
 ,,reg.province.badakshan,Badakshan,,Misc,N/A,,,,,,
 ,,reg.province.takhar,Takhar,,Misc,N/A,,,,,,
@@ -15,9 +15,6 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,reg.district.imam_sahib,Imam Sahib,,Misc,N/A,,,,,,
 ,,reg.district.qalaizal,Qalaizal,,Misc,N/A,,,,,,
 fb162989-1dab-44d9-a1e3-a03e26f70606,,reg.district,District,,Misc,Coded,reg.district.kunduz;reg.district.chardara;reg.district.khanabad;reg.district.aliabad;reg.district.dasht_e_archi;reg.district.imam_sahib;reg.district.qalaizal,,,,,
-,,reg.followup.normal,Normal,,Misc,N/A,,,,,,
-,,reg.followup.oneMissedAppointment,One missed appointment,,Misc,N/A,,,,,,
-,,reg.followup.twoMissedAppointments,Two missed appointments,,Misc,N/A,,,,,,
-,,reg.followup.threeMissedAppointments,Three missed appointments,,Misc,N/A,,,,,,
-,,reg.followup.lostToFollowup,Lost to follow-up,,Misc,N/A,,,,,,
-02b21ec1-1303-4f62-baa9-ab053e5792af,,reg.followupStatus,Follow-up status,,Misc,Coded,reg.followup.normal;reg.followup.oneMissedAppointment;reg.followup.twoMissedAppointments;reg.followup.threeMissedAppointments;reg.followup.lostToFollowup,,,,,
+c5ec7123-a8e5-4610-9dae-da1fd77fbbdc,,reg.followupStatusOne,Follow-up status 1,,Misc,Coded,forms.discharge.reasonLostFU.reported_healed;forms.discharge.reasonLostFU.no_phone;forms.discharge.reasonLostFU.contact_failed;forms.discharge.reasonLostFU.access_problems;forms.discharge.reasonLostFU.notSatisfied;forms.discharge.reasonLostFU.other,,,,,
+04f95f22-421f-4eab-b7c9-003f87a37f08,,reg.followupStatusTwo,Follow-up status 2,,Misc,Coded,forms.discharge.reasonLostFU.reported_healed;forms.discharge.reasonLostFU.no_phone;forms.discharge.reasonLostFU.contact_failed;forms.discharge.reasonLostFU.access_problems;forms.discharge.reasonLostFU.notSatisfied;forms.discharge.reasonLostFU.other,,,,,
+885c2275-e86a-4463-bf2d-fdd8d249cf30,,reg.followupStatusThree,Follow-up status 3,,Misc,Coded,forms.discharge.reasonLostFU.reported_healed;forms.discharge.reasonLostFU.no_phone;forms.discharge.reasonLostFU.contact_failed;forms.discharge.reasonLostFU.access_problems;forms.discharge.reasonLostFU.notSatisfied;forms.discharge.reasonLostFU.other,,,,,
