@@ -24,6 +24,7 @@
           and not exists (select 1
                           from patient_appointment a2
                           where a2.patient_appointment_id <> a.patient_appointment_id
+                            and a2.patient_id = a.patient_id
                             and a2.start_date_time > a.start_date_time
                             and a2.voided = 0)
           and not exists (select 1
