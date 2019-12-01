@@ -50,7 +50,7 @@ Bahmni.ConceptSet.FormConditions.rules = {};
     {
         question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment',
         determiningAnswers: ['clinical.painBeforDressing.treatment.other'],
-        otherQuestion: 'clinical.painBeforeDressing.treatment.other_details'
+        otherQuestion: 'clinical.painBeforDressing.treatment.other_details'
     },
     {
         question: 'forms.follow_up.woundSpecific.painAfterDressing.treatment',
