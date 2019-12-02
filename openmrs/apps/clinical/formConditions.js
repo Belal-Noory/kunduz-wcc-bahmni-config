@@ -1,131 +1,110 @@
 const makeCondition = (question, conds) => {
-  return (formName, formFieldValues) => {
-    // Careful: if a coded question is shared between forms, and those forms are
-    // opened at the same time, formFieldValues contains an array with the
-    // answer from every form for that question, with no way to distinguish which
-    // value is coming from which form.
-    // Therefore we should not share any coded questions between forms.
-    const value = formFieldValues[question];
-    return conds.reduce( (conditions, condition) => {
-      if (condition.determiningAnswers.some(ans => ans == value)) {
-        conditions.show.push(condition.otherQuestion);
-      } else {
-        conditions.hide.push(condition.otherQuestion);
-      }
-      return conditions;
-    }, { show: [], hide: [] })
-  }
+    return (formName, formFieldValues) => {
+        // Careful: if a coded question is shared between forms, and those forms are
+        // opened at the same time, formFieldValues contains an array with the
+        // answer from every form for that question, with no way to distinguish which
+        // value is coming from which form.
+        // Therefore we should not share any coded questions between forms.
+        const value = formFieldValues[question];
+        return conds.reduce((conditions, condition) => {
+            if (condition.determiningAnswers.some(ans => ans == value)) {
+                conditions.show.push(condition.otherQuestion);
+            } else {
+                conditions.hide.push(condition.otherQuestion);
+            }
+            return conditions;
+        }, { show: [], hide: [] })
+    }
 };
 
-Bahmni.ConceptSet.FormConditions.rules = [
-    {
+Bahmni.ConceptSet.FormConditions.rules = [{
         question: 'forms.assessment.woundSpecific.woundLocation',
-        conditions: [
-          {
-            determiningAnswers: [
-              'clinical.woundSpecific.woundLocation.arm',
-              'clinical.woundSpecific.woundLocation.hand',
-              'clinical.woundSpecific.woundLocation.leg',
-              'clinical.woundSpecific.woundLocation.foot'
-            ],
-            otherQuestion: 'forms.assessment.woundSpecific.woundLocation.leftRight'
-          },
-          {
-            determiningAnswers: [
-              'clinical.woundSpecific.woundLocation.arm',
-              'clinical.woundSpecific.woundLocation.hand',
-              'clinical.woundSpecific.woundLocation.leg',
-              'clinical.woundSpecific.woundLocation.foot',
-              'clinical.woundSpecific.woundLocation.thorax',
-              'clinical.woundSpecific.woundLocation.head'
-            ],
-            otherQuestion: 'forms.assessment.woundSpecific.woundLocation.frontBack'
-          }
+        conditions: [{
+                determiningAnswers: [
+                    'clinical.woundSpecific.woundLocation.arm',
+                    'clinical.woundSpecific.woundLocation.hand',
+                    'clinical.woundSpecific.woundLocation.leg',
+                    'clinical.woundSpecific.woundLocation.foot'
+                ],
+                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.leftRight'
+            },
+            {
+                determiningAnswers: [
+                    'clinical.woundSpecific.woundLocation.arm',
+                    'clinical.woundSpecific.woundLocation.hand',
+                    'clinical.woundSpecific.woundLocation.leg',
+                    'clinical.woundSpecific.woundLocation.foot',
+                    'clinical.woundSpecific.woundLocation.thorax',
+                    'clinical.woundSpecific.woundLocation.head'
+                ],
+                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.frontBack'
+            }
         ]
     },
     {
         question: 'forms.discharge.reasonLostFU',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['forms.discharge.reasonLostFU.other'],
             otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.painBeforDressing.treatment.other'],
             otherQuestion: 'clinical.painBeforDressing.treatment.other_details'
-          }
-        ]
+        }]
     },
     {
-        question: 'forms.follow_up.woundSpecific.painAfterDressing.treatment',
-        conditions: [
-          {
+        question: 'forms.follow_up.painAfterDressing.treatment',
+        conditions: [{
             determiningAnswers: ['clinical.painAfterDressing.treatment.other'],
             otherQuestion: 'clinical.painAfterDressing.treatment.other_details'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.assessment.woundSpecific.type',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.type.other'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.assessment.woundSpecific.periwound',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.periwound.other'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.follow_up.woundSpecific.periwound',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.periwound.other'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.follow_up.woundSpecific.wound_disinfection',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.woundSpecific.wound_disinfection.other'],
             otherQuestion: 'clinical.woundSpecific.wound_disinfection.otherDetail'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.follow_up.woundSpecific.periwound_protection',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['clinical.woundSpecific.periwound_protection.other'],
             otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
-          }
-        ]
+        }]
     },
     {
         question: 'forms.discharge.outcome',
-        conditions: [
-          {
+        conditions: [{
             determiningAnswers: ['forms.discharge.outcome.lostFU'],
             otherQuestion: 'forms.discharge.reasonLostFU'
-          }
-        ]
+        }]
     },
-].reduce( (rules, config) => {
-  rules[config.question] = makeCondition(config.question, config.conditions)
-  return rules
+].reduce((rules, config) => {
+    rules[config.question] = makeCondition(config.question, config.conditions)
+    return rules
 }, {})
-
