@@ -114,18 +114,14 @@ Bahmni.ConceptSet.FormConditions.rules = [{
     {
         question: 'forms.triage.tews.decision',
         conditions: [{
-            determiningAnswers: ['forms.triage.tews.refer',
-                'forms.triage.tews.admit'
-            ],
-            otherQuestion: 'forms.triage.tews.diagnose'
-        }]
-    },
-    {
-        question: 'forms.triage.tews.decision',
-        conditions: [{
-            determiningAnswers: ['forms.triage.tews.admit'],
-            otherQuestion: 'forms.triage.initialAssessment'
-        }]
+                determiningAnswers: ['forms.triage.tews.refer'],
+                otherQuestion: 'forms.triage.tews.diagnose'
+            },
+            {
+                determiningAnswers: ['forms.triage.tews.admit'],
+                otherQuestion: 'forms.triage.initialAssessment'
+            }
+        ]
     }
 ].reduce((rules, config) => {
     rules[config.question] = makeCondition(config.question, config.conditions)
