@@ -111,6 +111,13 @@ Bahmni.ConceptSet.FormConditions.rules = [{
             otherQuestion: 'forms.discharge.reasonLostFU'
         }]
     },
+    {
+        question: 'forms.triage.tews.refer',
+        conditions: [{
+            determiningAnswers: ['forms.triage.tews.refer'],
+            otherQuestion: 'forms.triage.tews.diagnose'
+        }]
+    }
 ].reduce((rules, config) => {
     rules[config.question] = makeCondition(config.question, config.conditions)
     return rules
