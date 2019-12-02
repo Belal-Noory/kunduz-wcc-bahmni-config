@@ -112,10 +112,19 @@ Bahmni.ConceptSet.FormConditions.rules = [{
         }]
     },
     {
-        question: 'forms.triage.tews.refer',
+        question: 'forms.triage.tews.decision',
         conditions: [{
-            determiningAnswers: ['forms.triage.tews.refer'],
+            determiningAnswers: ['forms.triage.tews.refer',
+                'forms.triage.tews.admit'
+            ],
             otherQuestion: 'forms.triage.tews.diagnose'
+        }]
+    },
+    {
+        question: 'forms.triage.tews.decision',
+        conditions: [{
+            determiningAnswers: ['forms.triage.tews.admit'],
+            otherQuestion: 'forms.triage.initialAssessment'
         }]
     }
 ].reduce((rules, config) => {
