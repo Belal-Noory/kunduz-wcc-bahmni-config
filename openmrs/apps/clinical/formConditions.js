@@ -49,16 +49,23 @@ Bahmni.ConceptSet.FormConditions.rules = [{
         }]
     },
     {
+        question: 'forms.triage.pain.treatment',
+        conditions: [{
+            determiningAnswers: ['clinical.pain.treatment.other'],
+            otherQuestion: 'clinical.pain.treatment.other_details'
+        }]
+    },
+    {
         question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment',
         conditions: [{
-            determiningAnswers: ['clinical.painBeforDressing.treatment.other'],
+            determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.painBeforDressing.treatment.other_details'
         }]
     },
     {
         question: 'forms.follow_up.painAfterDressing.treatment',
         conditions: [{
-            determiningAnswers: ['clinical.painAfterDressing.treatment.other'],
+            determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.painAfterDressing.treatment.other_details'
         }]
     },
