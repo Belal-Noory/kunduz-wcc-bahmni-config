@@ -49,7 +49,7 @@
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             },
             "FollowUp": {
-                "translationKey": "vitals",
+                "translationKey": "Follow Up Sheet",
                 "isObservation": true,
                 "dashboardConfig": {
                     "conceptNames": ["forms.follow_up.woundSpecific.painBeforDressing",
