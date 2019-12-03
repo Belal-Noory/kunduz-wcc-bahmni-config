@@ -56,20 +56,7 @@ Bahmni.ConceptSet.FormConditions.rules = [
             determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.periwound.other'
         }]
-    },    {
-        question: 'forms.discharge.reasonLostFU{{ wound_number }}',
-        conditions: [{
-            determiningAnswers: ['forms.discharge.reasonLostFU.other'],
-            otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
-        }]
-    },
-    {
-        question: 'forms.triage.pain.treatment{{ wound_number }}',
-        conditions: [{
-            determiningAnswers: ['clinical.pain.treatment.other'],
-            otherQuestion: 'clinical.pain.treatment.other_details'
-        }]
-    },
+    },    
     {
         question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment{{ wound_number }}',
         conditions: [{
@@ -106,13 +93,6 @@ Bahmni.ConceptSet.FormConditions.rules = [
         }]
     },
     {
-        question: 'forms.discharge.outcome{{ wound_number }}',
-        conditions: [{
-            determiningAnswers: ['forms.discharge.outcome.lostFU'],
-            otherQuestion: 'forms.discharge.reasonLostFU'
-        }]
-    },
-    {
         question: 'forms.triage.tews.structur{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.triage.tews.structur.other'],
@@ -130,8 +110,29 @@ Bahmni.ConceptSet.FormConditions.rules = [
                 otherQuestion: 'forms.triage.initialAssessment'
             }
         ]
-    }
+    },
 {% endfor %}
+    {
+        question: 'forms.discharge.outcome',
+        conditions: [{
+            determiningAnswers: ['forms.discharge.outcome.lostFU'],
+            otherQuestion: 'forms.discharge.reasonLostFU'
+        }]
+    },
+     {
+        question: 'forms.discharge.reasonLostFU',
+        conditions: [{
+            determiningAnswers: ['forms.discharge.reasonLostFU.other'],
+            otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
+        }]
+    },
+    {
+        question: 'forms.triage.pain.treatment',
+        conditions: [{
+            determiningAnswers: ['clinical.pain.treatment.other'],
+            otherQuestion: 'clinical.pain.treatment.other_details'
+        }]
+    },
 ].reduce((rules, config) => {
     rules[config.question] = makeCondition(config.question, config.conditions)
     return rules
