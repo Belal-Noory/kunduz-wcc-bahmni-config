@@ -92,25 +92,6 @@ Bahmni.ConceptSet.FormConditions.rules = [
             otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
         }]
     },
-    {
-        question: 'forms.triage.tews.structur{{ wound_number }}',
-        conditions: [{
-            determiningAnswers: ['clinical.triage.tews.structur.other'],
-            otherQuestion: 'clinical.triage.tews.structur.otherDetails'
-        }]
-    },
-    {
-        question: 'forms.triage.tews.decision{{ wound_number }}',
-        conditions: [{
-                determiningAnswers: ['forms.triage.tews.refer'],
-                otherQuestion: 'forms.triage.tews.referSection'
-            },
-            {
-                determiningAnswers: ['forms.triage.tews.admit'],
-                otherQuestion: 'forms.triage.initialAssessment'
-            }
-        ]
-    },
 {% endfor %}
     {
         question: 'forms.discharge.outcome',
@@ -133,6 +114,25 @@ Bahmni.ConceptSet.FormConditions.rules = [
             otherQuestion: 'clinical.pain.treatment.other_details'
         }]
     },
+    {
+        question: 'forms.triage.tews.decision{{ wound_number }}',
+        conditions: [{
+                determiningAnswers: ['forms.triage.tews.refer'],
+                otherQuestion: 'forms.triage.tews.referSection'
+            },
+            {
+                determiningAnswers: ['forms.triage.tews.admit'],
+                otherQuestion: 'forms.triage.initialAssessment'
+            }
+        ]
+    },
+    {
+        question: 'forms.triage.tews.structur{{ wound_number }}',
+        conditions: [{
+            determiningAnswers: ['clinical.triage.tews.structur.other'],
+            otherQuestion: 'clinical.triage.tews.structur.otherDetails'
+        }]
+    }
 ].reduce((rules, config) => {
     rules[config.question] = makeCondition(config.question, config.conditions)
     return rules
