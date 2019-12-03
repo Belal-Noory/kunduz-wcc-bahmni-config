@@ -35,6 +35,8 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.painAfterDressing.treatment.other_details,Treatment (If Other),,Question,Text,,,,,,,,,,,,
 ,,clinical.triage.tews.structur.otherDetails,structur (If Other),,Question,Text,,,,,,,,,,,,
 ,,clinical.triage.tews.structur.other,Other,,Misc,N/A,,,,,,,,,,,,
+,,clinical.triage.tews.structur.redCresent,Red Cresent,,Misc,N/A,,,,,,,,,,,,
+,,clinical.triage.tews.structur.handicapInt,Handicap International,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.tews.structur.krh,KRH,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.prophylaxis.ttVaccine.alreadyDone,Already done,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.prophylaxis.ttVaccine.no,No,,Misc,N/A,,,,,,,,,,,,
