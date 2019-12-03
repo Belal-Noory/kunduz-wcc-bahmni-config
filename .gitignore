@@ -1,6 +1,6 @@
 *.swp
 openmrs-module-initializer/configuration/concepts/assessment.csv
-openmrs-module-initializer/configuration/concepts/assessment_form.csv
+openmrs-module-initializer/configuration/concepts/follow_up.csv
 openmrs/apps/clinical/app.json
 openmrs/apps/clinical/formConditions.js
 
