@@ -17,8 +17,10 @@ const makeCondition = (question, conds) => {
     }
 };
 
-Bahmni.ConceptSet.FormConditions.rules = [{
-        question: 'forms.assessment.woundSpecific.woundLocation',
+Bahmni.ConceptSet.FormConditions.rules = [
+{% for wound_number in wound_numbers %}
+    {
+        question: 'forms.assessment.woundSpecific.woundLocation{{ wound_number }}',
         conditions: [{
                 determiningAnswers: [
                     'clinical.woundSpecific.woundLocation.arm',
@@ -26,7 +28,7 @@ Bahmni.ConceptSet.FormConditions.rules = [{
                     'clinical.woundSpecific.woundLocation.leg',
                     'clinical.woundSpecific.woundLocation.foot'
                 ],
-                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.leftRight'
+                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.leftRight{{ wound_number }}'
             },
             {
                 determiningAnswers: [
@@ -37,10 +39,25 @@ Bahmni.ConceptSet.FormConditions.rules = [{
                     'clinical.woundSpecific.woundLocation.thorax',
                     'clinical.woundSpecific.woundLocation.head'
                 ],
-                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.frontBack'
+                otherQuestion: 'forms.assessment.woundSpecific.woundLocation.frontBack{{ wound_number }}'
             }
         ]
     },
+    {
+        question: 'forms.assessment.woundSpecific.type{{ wound_number }}',
+        conditions: [{
+            determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
+            otherQuestion: 'clinical.woundSpecific.type.other'
+        }]
+    },
+    {
+        question: 'forms.assessment.woundSpecific.periwound{{ wound_number }}',
+        conditions: [{
+            determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
+            otherQuestion: 'clinical.woundSpecific.periwound.other'
+        }]
+    },
+{% endfor %}
     {
         question: 'forms.discharge.reasonLostFU',
         conditions: [{
@@ -67,20 +84,6 @@ Bahmni.ConceptSet.FormConditions.rules = [{
         conditions: [{
             determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.painAfterDressing.treatment.other_details'
-        }]
-    },
-    {
-        question: 'forms.assessment.woundSpecific.type',
-        conditions: [{
-            determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
-            otherQuestion: 'clinical.woundSpecific.type.other'
-        }]
-    },
-    {
-        question: 'forms.assessment.woundSpecific.periwound',
-        conditions: [{
-            determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
-            otherQuestion: 'clinical.woundSpecific.periwound.other'
         }]
     },
     {

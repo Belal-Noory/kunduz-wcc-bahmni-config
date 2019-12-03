@@ -43,7 +43,7 @@
         "allowOnlyCodedDiagnosis": false,
         "adtNavigationConfig": {
             "privilege": "",
-            "forwardUrl": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}",
+            "forwardUrl": "../bedmanagement/#/bedManagement/patient/{{ '{{' }}patientUuid{{ '}}' }}",
             "title": "Go to IPD dashboard"
         },
         "conceptSetUI": {
@@ -54,12 +54,11 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
-            "forms.assessment.woundSpecific": {
-                "allowAddMore": true
+{% for wound_number in wound_numbers %}
+            "forms.assessment.woundSpecific.size{{ wound_number }}": {
+                "isTabular": true
             },
-            "forms.follow_up.woundSpecific": {
-                "allowAddMore": true
-            },
+{% endfor %}
             "forms.triage.tews.mobility": {
                 "isTabular": true
             },
@@ -79,9 +78,6 @@
                 "isTabular": true
             },
             "forms.triage.tews.trauma": {
-                "isTabular": true
-            },
-            "forms.woundSpecific.size": {
                 "isTabular": true
             },
             "clinical.medication": {
