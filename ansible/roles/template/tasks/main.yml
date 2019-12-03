@@ -1,9 +1,17 @@
 ---
 
+- set_fact:
+    destination: "/etc/bahmni-installer/deployment-artifacts/{{ bahmni_implementation_name }}_config"
+  when: inside_docker
+
+- set_fact:
+    destination: "{{ config_location }}"
+  when: not inside_docker
+
 - name: Template the forms
   template:
     src: "{{ item }}.j2"
-    dest: "{{ config_location }}/openmrs-module-initializer/configuration/concepts/{{ item }}"
+    dest: "{{ destination}}/openmrs-module-initializer/configuration/concepts/{{ item }}"
   with_items:
     - assessment.csv
     - follow_up.csv

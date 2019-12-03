@@ -3,9 +3,8 @@
 - hosts: localhost
   connection: local
   vars:
-   wound_numbers: [1,2,3,4]
-   config_location: "/opt/kunduz-wcc-bahmni-config" 
-   #config_location: "/tmp" 
+    wound_numbers: [1,2,3,4]
+    config_location: "/opt/kunduz-wcc-bahmni-config"
   roles:
     - template
 
