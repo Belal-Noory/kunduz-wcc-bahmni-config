@@ -56,73 +56,71 @@ Bahmni.ConceptSet.FormConditions.rules = [
             determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.periwound.other'
         }]
-    },
-{% endfor %}
-    {
-        question: 'forms.discharge.reasonLostFU',
+    },    {
+        question: 'forms.discharge.reasonLostFU{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['forms.discharge.reasonLostFU.other'],
             otherQuestion: 'forms.discharge.reasonLostFU.otherDetail'
         }]
     },
     {
-        question: 'forms.triage.pain.treatment',
+        question: 'forms.triage.pain.treatment{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.pain.treatment.other_details'
         }]
     },
     {
-        question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment',
+        question: 'forms.follow_up.woundSpecific.painBeforDressing.treatment{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.painBeforDressing.treatment.other_details'
         }]
     },
     {
-        question: 'forms.follow_up.painAfterDressing.treatment',
+        question: 'forms.follow_up.painAfterDressing.treatment{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.pain.treatment.other'],
             otherQuestion: 'clinical.painAfterDressing.treatment.other_details'
         }]
     },
     {
-        question: 'forms.follow_up.woundSpecific.periwound',
+        question: 'forms.follow_up.woundSpecific.periwound{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.woundSpecific.periwound.otherAnswer'],
             otherQuestion: 'clinical.woundSpecific.periwound.other'
         }]
     },
     {
-        question: 'forms.follow_up.woundSpecific.wound_disinfection',
+        question: 'forms.follow_up.woundSpecific.wound_disinfection{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.woundSpecific.wound_disinfection.other'],
             otherQuestion: 'clinical.woundSpecific.wound_disinfection.otherDetail'
         }]
     },
     {
-        question: 'forms.follow_up.woundSpecific.periwound_protection',
+        question: 'forms.follow_up.woundSpecific.periwound_protection{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.woundSpecific.periwound_protection.other'],
             otherQuestion: 'clinical.woundSpecific.periwound_protection.other_detail'
         }]
     },
     {
-        question: 'forms.discharge.outcome',
+        question: 'forms.discharge.outcome{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['forms.discharge.outcome.lostFU'],
             otherQuestion: 'forms.discharge.reasonLostFU'
         }]
     },
     {
-        question: 'forms.triage.tews.structur',
+        question: 'forms.triage.tews.structur{{ wound_number }}',
         conditions: [{
             determiningAnswers: ['clinical.triage.tews.structur.other'],
             otherQuestion: 'clinical.triage.tews.structur.otherDetails'
         }]
     },
     {
-        question: 'forms.triage.tews.decision',
+        question: 'forms.triage.tews.decision{{ wound_number }}',
         conditions: [{
                 determiningAnswers: ['forms.triage.tews.refer'],
                 otherQuestion: 'forms.triage.tews.referSection'
@@ -133,6 +131,7 @@ Bahmni.ConceptSet.FormConditions.rules = [
             }
         ]
     }
+{% endfor %}
 ].reduce((rules, config) => {
     rules[config.question] = makeCondition(config.question, config.conditions)
     return rules
