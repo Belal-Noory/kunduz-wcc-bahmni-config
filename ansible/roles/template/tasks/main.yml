@@ -6,6 +6,7 @@
     dest: "{{ config_location }}/openmrs-module-initializer/configuration/concepts/{{ item }}"
   with_items:
     - assessment.csv
+    - follow_up.csv
 
 - name: Template the clinical config
   template:
