@@ -37,9 +37,10 @@
                             and cn.locale = 'en'
                             and o.voided = 0
                             and date(o.value_datetime) >= date(a.start_date_time))
-          and pa.person_attribute_type_id = (select person_attribute_type_id
+          and (pa.person_attribute_type_id is null or
+               pa.person_attribute_type_id = (select person_attribute_type_id
                                              from person_attribute_type
-                                             where name = 'reg.phoneNumber');
+                                             where name = 'reg.phoneNumber'));
       ]]></value>
     </globalProperty>
   </globalProperties>
