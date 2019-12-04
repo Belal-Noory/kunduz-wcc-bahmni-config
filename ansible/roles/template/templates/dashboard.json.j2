@@ -48,89 +48,56 @@
                 "formGroup": [],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             },
-            "FollowUp": {
-                "translationKey": "Follow Up Sheet",
+{% for wound_number in wound_numbers %}
+            "Wound follow-up - wound {{ wound_number }}": {
+                "translationKey": "wound follow-up - wound {{ wound_number }}",
                 "isObservation": true,
                 "dashboardConfig": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.painBeforDressing",
-                        "forms.follow_up.woundSpecific.tissue",
-                        "forms.follow_up.woundSpecific.infection",
-                        "forms.follow_up.woundSpecific.moisture",
-                        "forms.follow_up.woundSpecific.edges",
-                        "forms.follow_up.woundSpecific.periwound",
-                        "forms.follow_up.woundSpecific.wound_cleansing",
-                        "forms.follow_up.woundSpecific.skin_cleansing",
-                        "forms.follow_up.suture",
-                        "forms.follow_up.drainage_of_abscess",
-                        "forms.follow_up.removal_suture",
-                        "forms.follow_up.removal_drain",
-                        "forms.follow_up.woundSpecific.wound_disinfection",
-                        "forms.follow_up.woundSpecific.dressing",
-                        "forms.follow_up.woundSpecific.periwound_protection",
-                        "forms.follow_up.woundSpecific.fixation",
-                        "forms.follow_up.woundSpecific.painAfterDressing"
+                    "conceptNames": [
+                        "forms.follow_up.woundSpecific.painBeforDressing{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.size{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.tissue{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.infection{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.moisture{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.edges{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.periwoundSection{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.painAfterDressing{{ wound_number }}"
                     ],
 
                     "scope": "latest",
                     "showGroupDateTime": false
                 },
                 "expandedViewConfig": {
-                    "conceptNames": ["forms.follow_up.woundSpecific.painBeforDressing",
-                        "forms.follow_up.woundSpecific.tissue",
-                        "forms.follow_up.woundSpecific.infection",
-                        "forms.follow_up.woundSpecific.moisture",
-                        "forms.follow_up.woundSpecific.edges",
-                        "forms.follow_up.woundSpecific.periwound",
-                        "forms.follow_up.woundSpecific.wound_cleansing",
-                        "forms.follow_up.woundSpecific.skin_cleansing",
-                        "forms.follow_up.suture",
-                        "forms.follow_up.drainage_of_abscess",
-                        "forms.follow_up.removal_suture",
-                        "forms.follow_up.removal_drain",
-                        "forms.follow_up.woundSpecific.wound_disinfection",
-                        "forms.follow_up.woundSpecific.dressing",
-                        "forms.follow_up.woundSpecific.periwound_protection",
-                        "forms.follow_up.woundSpecific.fixation",
-                        "forms.follow_up.woundSpecific.painAfterDressing"
+                    "conceptNames": [
+                        "forms.follow_up.woundSpecific.painBeforDressing{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.size{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.tissue{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.infection{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.moisture{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.edges{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.periwoundSection{{ wound_number }}",
+                        "forms.follow_up.woundSpecific.painAfterDressing{{ wound_number }}"
                     ],
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "30",
                         "groupBy": "encounters",
-                        "obsConcepts": ["clinical.woundSpecific.woundNumber",
-                            "clinical.woundSpecific.size.length",
-                            "clinical.woundSpecific.size.width",
-                            "clinical.woundSpecific.size.depth",
-                            "forms.follow_up.woundSpecific.tissue",
-                            "forms.follow_up.woundSpecific.infection",
-                            "forms.follow_up.woundSpecific.moisture",
-                            "forms.follow_up.woundSpecific.edges",
-                            "forms.follow_up.woundSpecific.periwound",
-                            "forms.follow_up.woundSpecific.wound_cleansing",
-                            "forms.follow_up.woundSpecific.skin_cleansing",
-                            "forms.follow_up.suture",
-                            "forms.follow_up.drainage_of_abscess",
-                            "forms.follow_up.removal_suture",
-                            "forms.follow_up.removal_drain",
-                            "forms.follow_up.woundSpecific.wound_disinfection",
-                            "forms.follow_up.woundSpecific.dressing",
-                            "forms.follow_up.woundSpecific.periwound_protection",
-                            "forms.follow_up.woundSpecific.fixation",
-                            "clinical.pain.score",
-                            "forms.follow_up.pain.characteristic",
-                            "forms.follow_up.pain.treatment",
-                            "linical.woundSpecific.pain.treatment_received.dosage",
-                            "clinical.woundSpecific.pain.treatment_received.time",
-                            "clinical.woundSpecific.antibiotic.name",
-                            "clinical.woundSpecific.antibiotic.dosage",
-                            "clinical.woundSpecific.antibiotic.start_of_cycle",
-                            "clinical.woundSpecific.antibiotic.end_of_cycle"
+                        "obsConcepts": [
+                            "forms.follow_up.woundSpecific.painBeforDressing{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.size{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.tissue{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.infection{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.moisture{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.edges{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.periwoundSection{{ wound_number }}",
+                            "forms.follow_up.woundSpecific.painAfterDressing{{ wound_number }}"
                         ],
                         "drugConcepts": "",
                         "labConcepts": ""
                     }
                 }
-            }
+            }{{ '' if loop.last else ',' }}
+{% endfor %}
         }
     },
     "patientSummary": {

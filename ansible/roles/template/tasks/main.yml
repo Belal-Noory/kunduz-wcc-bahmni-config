@@ -22,5 +22,6 @@
     dest: "{{ destination }}/openmrs/apps/clinical/{{ item }}"
   with_items:
     - app.json
+    - dashboard.json
     - formConditions.js
 
