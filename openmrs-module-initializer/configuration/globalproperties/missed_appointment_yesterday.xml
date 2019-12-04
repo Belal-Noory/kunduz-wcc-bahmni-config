@@ -14,7 +14,7 @@
           on p.person_id = pn.person_id and pn.voided = 0
         inner join patient_identifier pi
           on p.person_id = pi.patient_id
-        inner join person_attribute pa
+        left outer join person_attribute pa
           on pa.person_id = p.person_id and pa.voided = 0
         inner join patient_appointment a
           on a.patient_id = p.person_id
