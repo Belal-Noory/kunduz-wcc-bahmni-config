@@ -82,6 +82,13 @@ Bahmni.ConceptSet.FormConditions.rules = [
                      { determiningAnswers: [true],
                        otherQuestion: 'forms.follow_up.woundSpecific.nextWound{{ loop.nextitem }}' }{% endif %}]
     },
+    {
+        question: 'forms.assessment.woundSpecific.nextWound{{ wound_number }}',
+        conditions: [{ determiningAnswers: [true],
+                       otherQuestion: 'forms.assessment.woundSpecific{{ loop.nextitem }}' }{% if loop.revindex > 2 %},
+                     { determiningAnswers: [true],
+                       otherQuestion: 'forms.assessment.woundSpecific.nextWound{{ loop.nextitem }}' }{% endif %}]
+    },
 {% endif %}
 {% endfor %}
     {

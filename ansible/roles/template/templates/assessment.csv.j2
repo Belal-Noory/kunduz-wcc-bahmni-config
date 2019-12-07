@@ -15,5 +15,8 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.assessment.woundSpecific.size{{ wound_number }},Size,,ConvSet,N/A,,,,clinical.woundSpecific.size.length;clinical.woundSpecific.size.width;clinical.woundSpecific.size.depth,,,,
 ,,forms.assessment.woundSpecific.medicalnote{{ wound_number }},Medical Notes,,Question,Text,,,,,,,,,,,,
 ,,forms.assessment.woundSpecific{{ wound_number }},Wound {{ wound_number }},,ConvSet,N/A,,,,forms.assessment.woundSpecific.woundLocation{{ wound_number }};forms.assessment.woundSpecific.woundLocation.leftRight{{ wound_number }};forms.assessment.woundSpecific.woundLocation.frontBack{{ wound_number }};forms.assessment.woundSpecific.mucosaeJoint{{ wound_number }};clinical.woundSpecific.date;forms.assessment.woundSpecific.type{{ wound_number }};clinical.woundSpecific.type.other;forms.assessment.woundSpecific.size{{ wound_number }};forms.assessment.woundSpecific.tissue{{ wound_number }};forms.assessment.woundSpecific.infection{{ wound_number }};forms.assessment.woundSpecific.moisture{{ wound_number }};forms.assessment.woundSpecific.edges{{ wound_number }};forms.assessment.woundSpecific.periwound{{ wound_number }};clinical.woundSpecific.periwound.other;forms.assessment.woundSpecific.medicalnote{{ wound_number }},,,,
+{% if not loop.last %}
+,,forms.assessment.woundSpecific.nextWound{{ wound_number }},Next wound,,Question,Boolean,,,,,,,,
+{% endif %}
 {% endfor %}
-,,forms.assessment,Assessment,,ConvSet,N/A,,,,{% for wound_number in wound_numbers %}forms.assessment.woundSpecific{{ wound_number }}{% if not loop.last %};{% endif %}{% endfor %},,,,
+,,forms.assessment,Assessment,,ConvSet,N/A,,,,{% for wound_number in wound_numbers %}forms.assessment.woundSpecific{{ wound_number }}{% if not loop.last %};forms.assessment.woundSpecific.nextWound{{ wound_number }};{% endif %}{% endfor %},,,,
