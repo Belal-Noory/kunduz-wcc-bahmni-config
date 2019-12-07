@@ -74,6 +74,11 @@ Bahmni.ConceptSet.FormConditions.rules = [
         conditions: [{ determiningAnswers: ['clinical.woundSpecific.fixation.post_op_dressing'],
                        otherQuestion: 'forms.follow_up.woundSpecific.fixation.post_op_dressing.size{{ wound_number }}' }]
     },
+    {
+        question: 'forms.follow_up.woundSpecific.dressing{{ wound_number }}',
+        conditions: [{ determiningAnswers: ['clinical.woundSpecific.dressing.absorbent_dressing'],
+                       otherQuestion: 'forms.follow_up.woundSpecific.dressing.absorbent_dressing_size{{ wound_number }}' }]
+    },
 {% if not loop.last %}
     {
         question: 'forms.follow_up.woundSpecific.nextWound{{ wound_number }}',
