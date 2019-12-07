@@ -2,8 +2,6 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,size.small,Small,,Misc,N/A,,,,,,,,,,,,
 ,,size.medium,Meduim,,Misc,N/A,,,,,,,,,,,,
 ,,size.large,Large,,Misc,N/A,,,,,,,,,,,,
-,,answer.yes,Yes,,Misc,N/A,,,,,,,,,,,,
-,,answer.no,No,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.green,Green,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.yellow,Yellow,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.orange,Orange,,Misc,N/A,,,,,,,,,,,,
