@@ -25,7 +25,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.triage.tews.refer,Refer,,Misc,N/A,,,,,,,,
 ,,forms.triage.tews.decision,Decision after Triage,,Question,Coded,,,forms.triage.tews.admit;forms.triage.tews.refer,,,,,  
 ,,forms.triage.tews.diagnose,Diagnose,,Question,Text,,,,,,,,
-,,forms.triage.tews.structur,Structur,,Question,Coded,,,clinical.triage.tews.structur.krh;clinical.triage.tews.structur.redCresent;clinical.triage.tews.structur.handicapInt;clinical.triage.tews.structur.other,,,,,
+,,forms.triage.tews.structur,Structure,,Question,Coded,,,clinical.triage.tews.structur.krh;clinical.triage.tews.structur.redCresent;clinical.triage.tews.structur.handicapInt;clinical.triage.tews.structur.other,,,,,
 ,,forms.triage.tews.referSection,Refer Section,,ConvSet,N/A,,,,forms.triage.tews.diagnose;forms.triage.tews.structur;clinical.triage.tews.structur.otherDetails,,,,
 ,,forms.triage.tews,TEWS Score,,ConvSet,N/A,,,,forms.triage.tews.mobility;forms.triage.tews.respiratory_rate;forms.triage.tews.heart_rate;forms.triage.tews.systolic_BP;forms.triage.tews.temperature;forms.triage.tews.avpu;forms.triage.tews.trauma;clinical.triage.tews_total_score;forms.triage.pregnancy;forms.triage.color;clinical.triage.history,,,,
 ,,forms.triage.initialAssessment,Initial Assessment,,ConvSet,N/A,,,,forms.triage.nutrition;forms.triage.medication;forms.triage.pain;forms.triage.prophylaxis;forms.triage.psychosocialFactors;forms.triage.comorbidities;forms.triage.increasedInfectionRisk,,,,
