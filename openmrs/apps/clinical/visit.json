@@ -1,21 +1,13 @@
 {
-    "general":{
+    "general": {
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
             "header": "Visit",
             "logo": "../images/bahmniLogo.png"
-          },
-        "defaultSections": true,
-        "sections": {
-            "obsForms":{ 
-              "type": "observation", 
-              "displayOrder": 2, 
-              "translationKey":"Observations", 
-              "config": { "conceptNames": [ "forms.triage", "forms.assessment", "forms.follow_up", "forms.discharge" ] } 
-            }
-        }
+        },
+        "defaultSections": true
     },
     "dischargeSummary":{
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
@@ -41,7 +33,7 @@
                     "showDetailsButton": true,
                     "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
                 }
-            }
+            },
             "clinicalNotes":{
                 "type": "observation",
                 "displayOrder": 5,
@@ -61,3 +53,4 @@
         }
     }
 }
+
