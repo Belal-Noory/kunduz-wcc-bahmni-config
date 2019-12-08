@@ -1,0 +1,71 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>emrapi.sqlSearch.follow_up_to_encode</property>
+      <value><![CDATA[
+        select concat(pn.given_name,' ', pn.family_name) as name,
+               pi.identifier as identifier,
+               concat("", p.uuid) as uuid,
+               null as activeVisitUuid,
+               null as hasBeenAdmitted,
+               pa.value as encodedUntil,
+               o.obs_datetime as last_follow_up
+        from obs o
+        inner join person p
+          on o.person_id = p.person_id and p.voided = 0
+        inner join person_name pn
+          on pn.person_id = p.person_id and pn.voided = 0
+        inner join patient_identifier pi
+          on pi.patient_id = o.person_id and pi.voided = 0
+        inner join concept_name cn
+          on cn.concept_id = o.concept_id and cn.voided = 0
+        left outer join person_attribute pa
+          on pa.person_id = o.person_id and pa.voided = 0
+        where cn.name = "forms.follow_up"
+          and pa.person_attribute_type_id = (select pat.person_attribute_type_id
+                                             from person_attribute_type pat
+                                             where pat.name = "reg.encodedUntil"
+                                               and pat.retired = 0)
+          and date(pa.value) < date(o.obs_datetime)
+          and cn.concept_name_type = "FULLY_SPECIFIED" 
+          and o.obs_datetime > date_sub(curdate(), interval 60 day)
+          and o.voided = 0
+        union
+        select concat(pn.given_name,' ', pn.family_name) as name,
+               pi.identifier as identifier,
+               concat("", p.uuid) as uuid,
+               null as activeVisitUuid,
+               null as hasBeenAdmitted,
+               null as encodedUntil,
+               null as last_follow_up
+        from obs o
+        inner join person p
+          on o.person_id = p.person_id and p.voided = 0
+        inner join person_name pn
+          on pn.person_id = p.person_id and pn.voided = 0
+        inner join patient_identifier pi
+          on pi.patient_id = o.person_id and pi.voided = 0
+        inner join concept_name cn
+          on cn.concept_id = o.concept_id and cn.voided = 0
+        where cn.name = "forms.follow_up"
+          and cn.concept_name_type = "FULLY_SPECIFIED" 
+          and not exists (select 1
+                          from person_attribute pa
+                          where pa.person_id = o.person_id
+                            and pa.voided = 0
+                            and person_attribute_type_id = (select pat.person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = "reg.encodedUntil"
+                                                              and pat.retired = 0))
+          and not exists (select 1
+                          from obs o2
+                          where o2.concept_id = o.concept_id
+                            and o2.person_id = o.person_id
+                            and o2.obs_datetime > o.obs_datetime
+                            and o2.voided = 0)
+          and o.voided = 0;
+      ]]></value>
+    </globalProperty>
+  </globalProperties>
+</config>
+
