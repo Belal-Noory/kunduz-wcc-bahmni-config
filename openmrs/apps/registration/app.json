@@ -82,6 +82,14 @@
                     "reg.followupStatusThreeComment"
                 ],
                 "expanded": true
+            },
+            "Wound care database encoding": {
+                "title": "Wound care database encoding",
+                "translationKey": "Wound care database encoding",
+                "attributes": [
+                    "reg.encodedUntil"
+                ],
+                "expanded": true
             }
         },
         "mandatoryPersonAttributes": [],
