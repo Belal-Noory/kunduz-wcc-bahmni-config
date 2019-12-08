@@ -61,6 +61,12 @@
             "forms.follow_up.woundSpecific.size{{ wound_number }}": {
                 "isTabular": true
             },
+            "forms.follow_up.woundSpecific.painBeforDressing.treatment{{ wound_number }}": {
+              "multiSelect": true
+            },
+            "forms.follow_up.woundSpecific.painAfterDressing.treatment{{ wound_number }}": {
+              "multiSelect": true
+            },
 {% endfor %}
             "forms.triage.tews.mobility": {
                 "isTabular": true
@@ -83,25 +89,31 @@
             "forms.triage.tews.trauma": {
                 "isTabular": true
             },
-            "clinical.medication": {
+            "forms.triage.medication": {
                 "multiSelect": true
             },
-            "clinical.pain.characteristic": {
+            "clinical.pain.score": {
+                "stepper": true
+            },
+            "clinical.pain.beforeDressing.score": {
+                "stepper": true
+            },
+            "clinical.pain.afterDressing.score": {
+                "stepper": true
+            },
+            "forms.triage.pain.characteristic": {
                 "multiSelect": true
             },
-            "clinical.pain.treatment": {
+            "forms.triage.pain.treatment": {
                 "multiSelect": true
             },
-            "clinical.psychosocialFactors": {
+            "forms.triage.psychosocialFactors": {
                 "multiSelect": true
             },
-            "clinical.comorbidities": {
+            "forms.triage.comorbidities": {
                 "multiSelect": true
             },
-            "clinical.increasedInfectionRisk": {
-                "multiSelect": true
-            },
-            "clinical.woundSpecific": {
+            "forms.triage.increasedInfectionRisk": {
                 "multiSelect": true
             },
             "defaults": {}
