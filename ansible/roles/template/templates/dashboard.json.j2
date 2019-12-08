@@ -9,14 +9,13 @@
                 "type": "patientInformation",
                 "displayOrder": 0,
                 "ageLimit": 100,
-                "patientAttributes": [],
-                "addressFields": [
-                ]
+                "patientAttributes": [ "reg.dateFirstVisit", "reg.phoneNumber", "reg.province", "reg.district", "reg.village", "reg.encodedUntil" ],
+                "addressFields": []
             },
             "navigationLinksControl": {
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type": "navigationLinksControl",
-                "displayOrder": 20,
+                "displayOrder": 2,
                 "showLinks": [
                     "home",
                     "visit",
@@ -27,7 +26,7 @@
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
-                "displayOrder": 10,
+                "displayOrder": 1,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 8,
@@ -36,7 +35,7 @@
             },
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 30,
+                "displayOrder": 3,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -44,11 +43,95 @@
                 "formGroup": [],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             },
-{% for wound_number in wound_numbers %}
-            "Wound follow-up - wound {{ wound_number }}": {
-                "translationKey": "wound follow-up - wound {{ wound_number }}",
+            "triage": {
+                "translationKey": "Triage",
                 "hideEmptyDisplayControl": true,
-                "displayOrder": 5{{ wound_number }},
+                "displayOrder": 15,
+                "isObservation": true,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "forms.triage"
+                    ],
+                    "scope": "latest",
+                    "showGroupDateTime": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "forms.triage"
+                    ],
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "30",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "forms.triage"
+                        ],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
+                }
+            },
+            "discharge": {
+                "translationKey": "Discharge",
+                "hideEmptyDisplayControl": true,
+                "displayOrder": 17,
+                "isObservation": true,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "forms.discharge"
+                    ],
+                    "scope": "latest",
+                    "showGroupDateTime": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "forms.discharge"
+                    ],
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "30",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "forms.discharge"
+                        ],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
+                }
+            },
+{% for wound_number in wound_numbers %}
+            "assessment{{ wound_number }}": {
+                "translationKey": "Wound assessment - wound {{ wound_number }}",
+                "hideEmptyDisplayControl": true,
+                "displayOrder": 2{{ wound_number }},
+                "isObservation": true,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "forms.assessment.woundSpecific{{ wound_number }}"
+                    ],
+                    "scope": "latest",
+                    "showGroupDateTime": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "forms.assessment.woundSpecific{{ wound_number }}"
+                    ],
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "30",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "forms.assessment.woundSpecific{{ wound_number }}"
+                        ],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
+                }
+            },
+            "follow_up{{ wound_number }}": {
+                "translationKey": "Wound follow-up - wound {{ wound_number }}",
+                "hideEmptyDisplayControl": true,
+                "displayOrder": 4{{ wound_number }},
                 "isObservation": true,
                 "dashboardConfig": {
                     "conceptNames": [
