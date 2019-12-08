@@ -7,7 +7,7 @@ const makeCondition = (question, conds) => {
         // Therefore we should not share any coded questions between forms.
         const value = formFieldValues[question];
         return conds.reduce((conditions, condition) => {
-            if (condition.determiningAnswers.some(ans => ans == value)) {
+            if (condition.determiningAnswers.some(ans => ans == value || (Array.isArray(value) && value.includes(ans)))) {
                 conditions.show.push(condition.otherQuestion);
             } else {
                 conditions.hide.push(condition.otherQuestion);
