@@ -4,44 +4,98 @@
       <property>emrapi.sqlSearch.missed_appointments_yesterday</property>
       <value><![CDATA[
         select concat(pn.given_name,' ', pn.family_name) as name,
-               pi.identifier as identifier,
-               concat("", p.uuid) as uuid,
-               null as activeVisitUuid,
-               null as hasBeenAdmitted,
-               pa.value as telephoneNumber
-        from person p
-        inner join person_name pn
-          on p.person_id = pn.person_id and pn.voided = 0
-        inner join patient_identifier pi
-          on p.person_id = pi.patient_id
-        left outer join person_attribute pa
-          on pa.person_id = p.person_id and pa.voided = 0
-        inner join patient_appointment a
-          on a.patient_id = p.person_id
-        where a.status = 'Missed'
-          and datediff(curdate(), date(a.start_date_time)) = 1
-          and a.voided = 0
-          and not exists (select 1
-                          from patient_appointment a2
-                          where a2.patient_appointment_id <> a.patient_appointment_id
-                            and a2.patient_id = a.patient_id
-                            and a2.start_date_time > a.start_date_time
-                            and a2.status <> 'Cancelled'
-                            and a2.voided = 0)
-          and not exists (select 1
-                          from obs o
-                          inner join concept_name cn
-                            on cn.concept_id = o.concept_id
-                          where o.person_id = p.person_id
-                            and cn.name = 'forms.discharge.endOfTreatment'
-                            and cn.concept_name_type = 'FULLY_SPECIFIED'
-                            and cn.locale = 'en'
-                            and o.voided = 0
-                            and date(o.value_datetime) >= date(a.start_date_time))
-          and (pa.person_attribute_type_id is null or
-               pa.person_attribute_type_id = (select person_attribute_type_id
-                                             from person_attribute_type
-                                             where name = 'reg.phoneNumber'));
+                      pi.identifier as identifier,
+                      concat("", p.uuid) as uuid,
+                      null as activeVisitUuid,
+                      null as hasBeenAdmitted,
+                      (select pa.value
+                       from person_attribute pa
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
+                         and pa.person_attribute_type_id = (select person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = 'reg.phoneNumber'
+                                                              and pat.retired = 0)
+                      ) as telephoneNumber,
+                      (select cn.name
+                       from person_attribute pa
+                       inner join concept_name cn
+                         on pa.value = cn.concept_id
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
+                         and cn.voided = 0
+                         and cn.concept_name_type = 'SHORT'
+                         and pa.person_attribute_type_id = (select person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = 'reg.followupStatusOne'
+                                                              and pat.retired = 0)
+                      ) as followupStatusOne,
+                      (select date(pa.value)
+                       from person_attribute pa
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
+                         and pa.person_attribute_type_id = (select person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = 'reg.followupStatusOneDate'
+                                                              and pat.retired = 0)
+                      ) as followupStatusOneDate,
+                      (select cn.name
+                       from person_attribute pa
+                       inner join concept_name cn
+                         on pa.value = cn.concept_id
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
+                         and cn.voided = 0
+                         and cn.concept_name_type = 'SHORT'
+                         and pa.person_attribute_type_id = (select person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = 'reg.followupStatusTwo'
+                                                              and pat.retired = 0)
+                      ) as followupStatusTwo,
+                      (select date(pa.value)
+                       from person_attribute pa
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
+                         and pa.person_attribute_type_id = (select person_attribute_type_id
+                                                            from person_attribute_type pat
+                                                            where pat.name = 'reg.followupStatusTwoDate'
+                                                              and pat.retired = 0)
+                      ) as followupStatusOneDate
+         from person p
+         inner join person_name pn
+           on p.person_id = pn.person_id and pn.voided = 0
+         inner join patient_identifier pi
+           on p.person_id = pi.patient_id
+         inner join patient_appointment a
+           on a.patient_id = p.person_id
+         where a.status = 'Missed'
+           and a.voided = 0
+           and not exists (select 1
+                           from patient_appointment a2
+                           where a2.patient_appointment_id <> a.patient_appointment_id
+                             and a2.patient_id = a.patient_id
+                             and a2.start_date_time > a.start_date_time
+                             and a2.status <> 'Cancelled'
+                             and a2.voided = 0)
+           and not exists (select 1
+                           from obs o
+                           inner join concept_name cn
+                             on cn.concept_id = o.concept_id
+                           where o.person_id = p.person_id
+                             and cn.name = 'forms.discharge.endOfTreatment'
+                             and cn.concept_name_type = 'FULLY_SPECIFIED'
+                             and cn.locale = 'en'
+                             and o.voided = 0
+                             and date(o.value_datetime) >= date(a.start_date_time))
+           and not exists (select 1
+                           from person_attribute pa
+                           inner join person_attribute_type pat
+                             on pa.person_attribute_type_id = pat.person_attribute_type_id
+                           where pa.voided = 0
+                             and pat.retired = 0
+                             and pat.name = 'reg.followupStatusThree'
+                             and pa.value is not null)
+           and a.start_date_time > date_sub(curdate(), interval 90 day);
       ]]></value>
     </globalProperty>
   </globalProperties>
