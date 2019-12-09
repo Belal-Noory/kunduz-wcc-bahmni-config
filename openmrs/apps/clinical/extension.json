@@ -48,6 +48,19 @@
     },
     "order": 10,
     "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchToEncode": {
+    "id": "bahmni.clinical.patients.search.toEncode",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.to_encode_queue",
+      "view": "tabular",
+      "translationKey": "Patients to encode",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "order": 15,
+    "requiredPrivilege": "app:clinical"
   }
 }
 
