@@ -61,7 +61,8 @@
                 "translationKey": "Follow-up information 1",
                 "attributes": [
                     "reg.followupStatusOne",
-                    "reg.followupStatusOneComment"
+                    "reg.followupStatusOneComment",
+                    "reg.followupStatusOneDate"
                 ],
                 "expanded": true
             },
@@ -70,16 +71,18 @@
                 "translationKey": "Follow-up information 2",
                 "attributes": [
                     "reg.followupStatusTwo",
-                    "reg.followupStatusTwoComment"
+                    "reg.followupStatusTwoComment",
+                    "reg.followupStatusTwoDate"
                 ],
                 "expanded": true
             },
             "followupInformationThree": {
-                "title": "Follow-up information 3",
-                "translationKey": "Follow-up information 3",
+                "title": "Final follow-up information",
+                "translationKey": "Final follow-up information",
                 "attributes": [
                     "reg.followupStatusThree",
-                    "reg.followupStatusThreeComment"
+                    "reg.followupStatusThreeComment",
+                    "reg.followupStatusThreeDate"
                 ],
                 "expanded": true
             },
