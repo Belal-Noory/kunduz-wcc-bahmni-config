@@ -17,19 +17,6 @@
                                                             where pat.name = 'reg.phoneNumber'
                                                               and pat.retired = 0)
                       ) as telephoneNumber,
-                      (select cn.name
-                       from person_attribute pa
-                       inner join concept_name cn
-                         on pa.value = cn.concept_id
-                       where pa.person_id = p.person_id
-                         and pa.voided = 0
-                         and cn.voided = 0
-                         and cn.concept_name_type = 'SHORT'
-                         and pa.person_attribute_type_id = (select person_attribute_type_id
-                                                            from person_attribute_type pat
-                                                            where pat.name = 'reg.followupStatusOne'
-                                                              and pat.retired = 0)
-                      ) as followupStatusOne,
                       (select date(pa.value)
                        from person_attribute pa
                        where pa.person_id = p.person_id
@@ -39,19 +26,6 @@
                                                             where pat.name = 'reg.followupStatusOneDate'
                                                               and pat.retired = 0)
                       ) as followupStatusOneDate,
-                      (select cn.name
-                       from person_attribute pa
-                       inner join concept_name cn
-                         on pa.value = cn.concept_id
-                       where pa.person_id = p.person_id
-                         and pa.voided = 0
-                         and cn.voided = 0
-                         and cn.concept_name_type = 'SHORT'
-                         and pa.person_attribute_type_id = (select person_attribute_type_id
-                                                            from person_attribute_type pat
-                                                            where pat.name = 'reg.followupStatusTwo'
-                                                              and pat.retired = 0)
-                      ) as followupStatusTwo,
                       (select date(pa.value)
                        from person_attribute pa
                        where pa.person_id = p.person_id
