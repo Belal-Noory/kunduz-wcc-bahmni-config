@@ -2,6 +2,16 @@
   <globalProperties>
     <globalProperty>
       <property>emrapi.sqlSearch.to_encode_queue</property>
+      <!--
+        We first retrieve two sets of patients, which we combine with a union:
+          * Patients who have an encodedUntil attribute but who have at least one
+            form (assessment, follow-up or discharge) that has been recorded more
+            recently than this attribute's date value.
+          * Patients who do not have an encodedUntil attribute, but who have at
+            least one of these forms recorded.
+        Then we calculate the last recorded dates of each of these forms based on
+        the data obtained from this first part of the query.
+      -->
       <value><![CDATA[
         select concat(r.given_name,' ', r.family_name) as name,
                r.identifier as identifier,
