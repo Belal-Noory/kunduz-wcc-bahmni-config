@@ -60,7 +60,7 @@
                                                             from person_attribute_type pat
                                                             where pat.name = 'reg.followupStatusTwoDate'
                                                               and pat.retired = 0)
-                      ) as followupStatusOneDate
+                      ) as followupStatusTwoDate
          from person p
          inner join person_name pn
            on p.person_id = pn.person_id and pn.voided = 0
