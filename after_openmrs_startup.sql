@@ -11,3 +11,4 @@ values (@user_id, 'Admin-App'),
        (@user_id, 'SuperAdmin'),
        (@user_id, 'System Developer');
 
+create index status_date on patient_appointment (status, start_date_time) using btree;
