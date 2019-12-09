@@ -36,17 +36,30 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchMissedAppointmentYesterday": {
-    "id": "bahmni.clinical.patients.search.missedAppointmentsYesterday",
+  "bahmniClinicalPatientsSearchMissedAppointment": {
+    "id": "bahmni.clinical.patients.search.missedAppointments",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.missed_appointments_yesterday",
+      "searchHandler": "emrapi.sqlSearch.missed_appointments",
       "view": "tabular",
-      "translationKey": "Missed appointment yesterday",
+      "translationKey": "Missed appointments",
       "forwardUrl": "../registration/index.html#/patient/{{patientUuid}}"
     },
     "order": 10,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchLostToFU": {
+    "id": "bahmni.clinical.patients.search.lostToFU",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.lost_to_follow_up",
+      "view": "tabular",
+      "translationKey": "Lost to follow-up",
+      "forwardUrl": "../registration/index.html#/patient/{{patientUuid}}"
+    },
+    "order": 15,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchToEncode": {
@@ -59,7 +72,7 @@
       "translationKey": "Patients to encode",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
-    "order": 15,
+    "order": 20,
     "requiredPrivilege": "app:clinical"
   }
 }
