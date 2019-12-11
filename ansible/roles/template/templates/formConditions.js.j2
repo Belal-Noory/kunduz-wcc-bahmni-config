@@ -39,7 +39,7 @@ Bahmni.ConceptSet.FormConditions.rules = [
         conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
                        otherQuestion: 'clinical.woundSpecific.type.other' },
                        { determiningAnswers: ['forms.assessment.woundSpecific.type.surgical{{wound_number}}'],
-                       otherQuestion: 'clinical.woundSpecific.type.surgical.otherDetails' }]
+                       otherQuestion: 'forms.assessment.woundSpecific.type.surgical{{wound_number}}' }]
     },
     {
         question: 'forms.assessment.woundSpecific.periwound{{ wound_number }}',
