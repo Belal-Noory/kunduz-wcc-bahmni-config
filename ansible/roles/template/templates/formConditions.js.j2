@@ -94,6 +94,11 @@ Bahmni.ConceptSet.FormConditions.rules = [
                      { determiningAnswers: [true],
                        otherQuestion: 'forms.assessment.woundSpecific.nextWound{{ loop.nextitem }}' }{% endif %}]
     },
+    {
+        question: 'forms.assessment.woundSpecific.type.surgical{{wound_number}}',
+       conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.surgical.other'],
+                       otherQuestion: 'clinical.woundSpecific.type.surgical.otherDetails' }]
+    },
 {% endif %}
 {% endfor %}
     {
