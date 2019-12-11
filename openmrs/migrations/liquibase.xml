@@ -77,12 +77,26 @@
               '', null, 1, now(), 1, now(), @pid, 0, null, null, null, uuid());
     </sql>
   </changeSet>
-  <changeSet id="08102019_1600" author="R-VdP">
+  <changeSet id="10122019_1208" author="R-VdP">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="1">
+        select count(*)
+        from visit_type
+        where name = "LAB VISIT";
+      </sqlCheck>
+    </preConditions>
+    <comment>Remove the LAB VISIT visit type.</comment>
+    <sql>
+      delete from openmrs.visit_type
+      where name = "LAB VISIT";
+    </sql>
+  </changeSet>
+  <changeSet id="10122019_1213" author="R-VdP">
     <preConditions onFail="MARK_RAN">
       <sqlCheck expectedResult="0">
         select count(*)
         from visit_type
-        where name="OPD";
+        where name = "OPD";
       </sqlCheck>
     </preConditions>
     <comment>Add the OPD visit type.</comment>
@@ -90,8 +104,25 @@
       insert into openmrs.visit_type(name, description, creator, date_created,
                                      changed_by, date_changed, retired, retired_by,
                                      date_retired, retire_reason, uuid)
-        values ('OPD', 'Visit for patients coming for OPD', 1, now(), null, null,
-                0, null, null, null, uuid());
+      values ('OPD', 'Visit for patients coming for OPD', 1, now(), null, null,
+              0, null, null, null, uuid());
+    </sql>
+  </changeSet>
+  <changeSet id="10122019_1210" author="R-VdP">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        select count(*)
+        from visit_type
+        where name = "DISCHARGE";
+      </sqlCheck>
+    </preConditions>
+    <comment>Add the DISCHARGE visit type.</comment>
+    <sql>
+      insert into openmrs.visit_type(name, description, creator, date_created,
+                                     changed_by, date_changed, retired, retired_by,
+                                     date_retired, retire_reason, uuid)
+      values ('DISCHARGE', 'Visit to register a discharge form for patients lost to follow-up',
+              1, now(), null, null, 0, null, null, null, uuid());
     </sql>
   </changeSet>
   <changeSet id="08102019_1601" author="R-VdP">
