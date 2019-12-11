@@ -75,6 +75,8 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.woundSpecific.woundLocation.right,Right,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.woundLocation.back,Back,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.woundLocation.front,Front,,Misc,N/A,,,,,,,,,,,,
+,,clinical.woundSpecific.woundLocation.lateral,Lateral,,Misc,N/A,,,,,,,,,,,,
+,,clinical.woundSpecific.woundLocation.medial,Medial,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.mucosaeJoint.mucosae,Mucosae,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.mucosaeJoint.joint,Joint,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.date,Date of wound,,Question,Date,,,,,,,,,,,,
