@@ -37,7 +37,9 @@ Bahmni.ConceptSet.FormConditions.rules = [
     {
         question: 'forms.assessment.woundSpecific.type{{ wound_number }}',
         conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
-                       otherQuestion: 'clinical.woundSpecific.type.other' }]
+                       otherQuestion: 'clinical.woundSpecific.type.other' },
+                       { determiningAnswers: ['forms.assessment.woundSpecific.type.surgical{{wound_number}}'],
+                       otherQuestion: 'clinical.woundSpecific.type.surgical.otherDetails' }]
     },
     {
         question: 'forms.assessment.woundSpecific.periwound{{ wound_number }}',
@@ -79,6 +81,11 @@ Bahmni.ConceptSet.FormConditions.rules = [
         conditions: [{ determiningAnswers: ['clinical.woundSpecific.dressing.absorbent_dressing'],
                        otherQuestion: 'forms.follow_up.woundSpecific.dressing.absorbent_dressing_size{{ wound_number }}' }]
     },
+    {
+        question: 'forms.assessment.woundSpecific.type.surgical{{wound_number}}',
+       conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.surgical.other'],
+                       otherQuestion: 'clinical.woundSpecific.type.surgical.otherDetails' }]
+    },
 {% if not loop.last %}
     {
         question: 'forms.follow_up.woundSpecific.nextWound{{ wound_number }}',
@@ -93,11 +100,6 @@ Bahmni.ConceptSet.FormConditions.rules = [
                        otherQuestion: 'forms.assessment.woundSpecific{{ loop.nextitem }}' }{% if loop.revindex > 2 %},
                      { determiningAnswers: [true],
                        otherQuestion: 'forms.assessment.woundSpecific.nextWound{{ loop.nextitem }}' }{% endif %}]
-    },
-    {
-        question: 'forms.assessment.woundSpecific.type.surgical{{wound_number}}',
-       conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.surgical.other'],
-                       otherQuestion: 'clinical.woundSpecific.type.surgical.otherDetails' }]
     },
 {% endif %}
 {% endfor %}

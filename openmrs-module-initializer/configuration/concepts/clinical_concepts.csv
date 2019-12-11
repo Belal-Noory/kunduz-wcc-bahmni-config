@@ -82,7 +82,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.woundSpecific.type.surgical.drainage,Drainage,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.type.surgical.debridement,Debridement,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.type.surgical.fixation,Fixation,,Misc,N/A,,,,,,,,,,,,
-,,clinical.woundSpecific.type.surgical.other,Surgical,,Misc,N/A,,,,,,,,,,,,
+,,clinical.woundSpecific.type.surgical.other,Other,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.type.surgical.otherDetails,Surgical (If Other),,Question,Text,,,,,,,,,,,,
 ,,clinical.woundSpecific.type.traumatic,Traumatic (no surgical procedure),,Misc,N/A,,,,,,,,,,,,
 ,,clinical.woundSpecific.type.chronic,Chronic,,Misc,N/A,,,,,,,,,,,,
