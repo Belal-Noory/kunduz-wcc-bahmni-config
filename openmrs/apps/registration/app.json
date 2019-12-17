@@ -21,7 +21,12 @@
             "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations",
             "translationKey": "Start OPD Visit",
             "shortcutKey": "c"
-        }],
+        },{
+                "visitType": "DISCHARGE",
+                "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations",
+                "translationKey": "Start DISCHARGE Visit",
+                "shortcutKey": ""
+            }],
         "showEnterID": false,
         "minCharRequireToSearch": 3,
         "dobMandatory": true,
