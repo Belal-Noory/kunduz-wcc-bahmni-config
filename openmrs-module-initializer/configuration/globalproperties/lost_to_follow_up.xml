@@ -43,11 +43,11 @@
          inner join person_name pn
            on p.person_id = pn.person_id and pn.voided = 0
          inner join patient_identifier pi
-           on p.person_id = pi.patient_id
+           on p.person_id = pi.patient_id and pi.voided = 0
          inner join patient_appointment a
-           on a.patient_id = p.person_id
+           on a.patient_id = p.person_id and a.voided = 0
          where a.status = 'Missed'
-           and a.voided = 0
+           and p.voided = 0
            and not exists (select 1
                            from patient_appointment a2
                            where a2.patient_appointment_id <> a.patient_appointment_id
@@ -69,7 +69,8 @@
                        from person_attribute pa
                        inner join person_attribute_type pat
                          on pa.person_attribute_type_id = pat.person_attribute_type_id
-                       where pa.voided = 0
+                       where pa.person_id = p.person_id
+                         and pa.voided = 0
                          and pat.retired = 0
                          and pat.name = 'reg.followupStatusThree'
                          and pa.value is not null)
