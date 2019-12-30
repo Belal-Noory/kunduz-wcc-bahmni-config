@@ -39,15 +39,16 @@
                                                      where pat.name = 'reg.followupStatusThreeDate'
                                                        and pat.retired = 0)
                ) as followupStatusDate
-         from person p
+         from patient_appointment a
+         force index (status_date)
+         inner join person p
+           on a.patient_id = p.person_id and p.voided = 0
          inner join person_name pn
            on p.person_id = pn.person_id and pn.voided = 0
          inner join patient_identifier pi
            on p.person_id = pi.patient_id and pi.voided = 0
-         inner join patient_appointment a
-           on a.patient_id = p.person_id and a.voided = 0
          where a.status = 'Missed'
-           and p.voided = 0
+           and a.voided = 0
            and not exists (select 1
                            from patient_appointment a2
                            where a2.patient_appointment_id <> a.patient_appointment_id
