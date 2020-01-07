@@ -172,7 +172,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,clinical.triage.mobility.walking,Walking,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.mobility.with_help,With Help,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.mobility.stretcher,Stretcher,,Misc,N/A,,,,,,,,,,,,
-,,clinical.triage.mobility_score,Mobility Score,,Question,Numeric,0,0,0,,,yes,,,,,,
+,,clinical.triage.mobility_score,Mobility Score,,Question,Numeric,0,0,0,,,yes,,,,,
 ,,clinical.triage.respiratory_rate,Respiratory Rate,,Question,Numeric,0,0,0,,,,yes,,,,,
 ,,clinical.triage.respiratory_rate_score,Respiratory Rate Score,,Question,Numeric,0,0,0,,,,yes,,,,,
 ,,clinical.triage.heart_rate,Heart Rate,,Question,Numeric,0,0,0,,,,yes,,,,,
