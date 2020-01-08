@@ -3,7 +3,7 @@ Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class
 ,,forms.discharge.outcome.healed,Healed,,Misc,N/A,,,,,,
 ,,forms.discharge.outcome.referred,Referred,,Misc,N/A,,,,,,
 ,,forms.discharge.outcome.lostFU,Lost to follow-up,,Misc,N/A,,,,,,
-,,forms.discharge.outcome,Outcome,,Question,Coded,forms.discharge.outcome.healed;forms.discharge.outcome.referred;forms.discharge.outcome.movedAway;forms.discharge.outcome.died;forms.discharge.outcome.lostFU;forms.discharge.outcome.defaulter,,,,,
+,,forms.discharge.outcome,Outcome,,Question,Coded,forms.discharge.outcome.healed;forms.discharge.outcome.referred;forms.discharge.outcome.lostFU,,,,,
 ,,forms.discharge.reasonLostFU.reported_healed,Reported healed,,Misc,N/A,,,,,,
 ,,forms.discharge.reasonLostFU.no_phone,No phone,,Misc,N/A,,,,,,
 ,,forms.discharge.reasonLostFU.contact_failed,Contact failed,,Misc,N/A,,,,,,
