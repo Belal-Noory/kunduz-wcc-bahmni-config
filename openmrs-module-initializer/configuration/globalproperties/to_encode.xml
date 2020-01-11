@@ -31,7 +31,11 @@
                                   from obs o2_fu
                                   where o2_fu.concept_id = o_fu.concept_id
                                     and o2_fu.person_id = o_fu.person_id
-                                    and o2_fu.obs_datetime > o_fu.obs_datetime
+                                    -- We have seen some unexplained instances of forms appearing twice in the DB
+                                    -- with the exact same values and creation dates.
+                                    -- Nothing weird shows up in the GUI though...
+                                    and (o2_fu.obs_datetime > o_fu.obs_datetime
+                                     or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
                ) as assessment_date,
                (select date(o_fu.obs_datetime)
@@ -46,7 +50,11 @@
                                   from obs o2_fu
                                   where o2_fu.concept_id = o_fu.concept_id
                                     and o2_fu.person_id = o_fu.person_id
-                                    and o2_fu.obs_datetime > o_fu.obs_datetime
+                                    -- We have seen some unexplained instances of forms appearing twice in the DB
+                                    -- with the exact same values and creation dates.
+                                    -- Nothing weird shows up in the GUI though...
+                                    and (o2_fu.obs_datetime > o_fu.obs_datetime
+                                     or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
                ) as last_follow_up_date,
                (select date(o_fu.obs_datetime)
@@ -61,7 +69,11 @@
                                   from obs o2_fu
                                   where o2_fu.concept_id = o_fu.concept_id
                                     and o2_fu.person_id = o_fu.person_id
-                                    and o2_fu.obs_datetime > o_fu.obs_datetime
+                                    -- We have seen some unexplained instances of forms appearing twice in the DB
+                                    -- with the exact same values and creation dates.
+                                    -- Nothing weird shows up in the GUI though...
+                                    and (o2_fu.obs_datetime > o_fu.obs_datetime
+                                     or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
                ) as discharge_recorded_date
         from (select pn.given_name,
@@ -122,7 +134,8 @@
                                                                   from person_attribute_type pat
                                                                   where pat.name = "reg.encodedUntil"
                                                                     and pat.retired = 0))
-        ) as r;
+        ) as r
+        order by identifier;
       ]]></value>
     </globalProperty>
   </globalProperties>
