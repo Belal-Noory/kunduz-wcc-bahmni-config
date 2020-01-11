@@ -1,6 +1,6 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Absolute low,Critical low,Normal low,Normal high,Critical high,Absolute high,Allow decimals,Answers,Members,Units,_version:1,_order:1100
 ,,size.small,Small,,Misc,N/A,,,,,,,,,,,,
-,,size.medium,Meduim,,Misc,N/A,,,,,,,,,,,,
+,,size.medium,Medium,,Misc,N/A,,,,,,,,,,,,
 ,,size.large,Large,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.green,Green,,Misc,N/A,,,,,,,,,,,,
 ,,clinical.triage.yellow,Yellow,,Misc,N/A,,,,,,,,,,,,
