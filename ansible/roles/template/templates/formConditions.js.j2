@@ -40,6 +40,26 @@ Bahmni.ConceptSet.FormConditions.rules = [
                        otherQuestion: 'forms.assessment.woundSpecific.woundLocation.lateralMedial{{ wound_number }}' }]
     },
     {
+        question: 'forms.follow_up.woundSpecific.woundLocation{{ wound_number }}',
+        conditions: [{ determiningAnswers: [ 'clinical.woundSpecific.woundLocation.arm',
+                                             'clinical.woundSpecific.woundLocation.hand',
+                                             'clinical.woundSpecific.woundLocation.leg',
+                                             'clinical.woundSpecific.woundLocation.foot' ],
+                       otherQuestion: 'forms.follow_up.woundSpecific.woundLocation.leftRight{{ wound_number }}' },
+                     { determiningAnswers: [ 'clinical.woundSpecific.woundLocation.arm',
+                                             'clinical.woundSpecific.woundLocation.hand',
+                                             'clinical.woundSpecific.woundLocation.leg',
+                                             'clinical.woundSpecific.woundLocation.foot',
+                                             'clinical.woundSpecific.woundLocation.thorax',
+                                             'clinical.woundSpecific.woundLocation.head' ],
+                       otherQuestion: 'forms.follow_up.woundSpecific.woundLocation.frontBack{{ wound_number }}' },
+                       { determiningAnswers: [ 'clinical.woundSpecific.woundLocation.arm',
+                                             'clinical.woundSpecific.woundLocation.hand',
+                                             'clinical.woundSpecific.woundLocation.leg',
+                                             'clinical.woundSpecific.woundLocation.foot' ],
+                       otherQuestion: 'forms.follow_up.woundSpecific.woundLocation.lateralMedial{{ wound_number }}' }]
+    },
+    {
         question: 'forms.assessment.woundSpecific.type{{ wound_number }}',
         conditions: [{ determiningAnswers: ['clinical.woundSpecific.type.otherAnswer'],
                        otherQuestion: 'clinical.woundSpecific.type.other' },
