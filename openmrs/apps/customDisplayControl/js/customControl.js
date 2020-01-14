@@ -15,7 +15,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                     withCredentials: true
                 });
             };
-            $q.all([getUpcomingAppointments(), getPastAppointments()]).then(function(response) {
+            $q.all([getUpcomingAppointments()]).then(function(response) {
                 $scope.upcomingAppointments = response[0].data;
                 $scope.upcomingAppointmentsHeadings = _.keys($scope.upcomingAppointments[0]);
             });
