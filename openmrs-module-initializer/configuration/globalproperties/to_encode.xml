@@ -19,7 +19,7 @@
                null as activeVisitUuid,
                null as hasBeenAdmitted,
                date(r.value) as encodedUntil,
-                      (select date(o_fu.obs_datetime)
+              (select date(o_fu.obs_datetime)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -75,7 +75,79 @@
                                     and (o2_fu.obs_datetime > o_fu.obs_datetime
                                      or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
-               ) as discharge_recorded_date
+               ) as discharge_recorded_date,
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific1"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific2"
+               ), '-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific3"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific4"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific5"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific6"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific7"
+               ),'-',
+               concat((select count(*)
+                from obs o_fu
+                inner join concept_name cn_fu
+                  on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
+                where o_fu.voided = 0
+                  and o_fu.person_id = r.person_id
+                  and cn_fu.concept_name_type = "FULLY_SPECIFIED"
+                  and cn_fu.name = "forms.follow_up.woundspecific8"
+               ))))))))) as Dressing_Count
         from (select pn.given_name,
                      pn.family_name,
                      pi.identifier,
