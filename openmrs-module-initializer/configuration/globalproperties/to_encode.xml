@@ -13,7 +13,7 @@
         the data obtained from this first part of the query.
       -->
       <value><![CDATA[
-        select concat(r.given_name,' ', r.family_name) as name,
+       select concat(r.given_name,' ', r.family_name) as name,
                r.identifier as identifier,
                concat("", r.uuid) as uuid,
                null as activeVisitUuid,
@@ -76,7 +76,7 @@
                                      or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
                ) as discharge_recorded_date,
-               (select replace(concat(count(*)
+               (select replace(concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -85,7 +85,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific1"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -94,7 +94,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific2"
                ), '-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -103,7 +103,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific3"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -112,7 +112,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific4"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -121,7 +121,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific5"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -130,7 +130,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific6"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
@@ -139,7 +139,7 @@
                   and cn_fu.concept_name_type = "FULLY_SPECIFIED"
                   and cn_fu.name = "forms.follow_up.woundspecific7"
                ),'-',
-               concat(count(*)
+               concat((select count(*)
                 from obs o_fu
                 inner join concept_name cn_fu
                   on cn_fu.concept_id = o_fu.concept_id and cn_fu.voided = 0
