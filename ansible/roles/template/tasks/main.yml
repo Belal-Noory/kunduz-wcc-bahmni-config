@@ -16,6 +16,13 @@
     - assessment.csv
     - follow_up.csv
 
+- name: Template the global properties
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ destination }}/openmrs-module-initializer/configuration/globalproperties/{{ item }}"
+  with_items:
+    - to_encode.xml
+
 - name: Template the clinical config
   template:
     src: "{{ item }}.j2"
