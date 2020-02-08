@@ -76,7 +76,7 @@
                                      or (o2_fu.obs_datetime = o_fu.obs_datetime and o2_fu.obs_id > o_fu.obs_id))
                                     and o2_fu.voided = 0)
                ) as 'discharge recorded date',
-               (select concat(
+               (select replace(concat(
                {% for wound_number in wound_numbers %}
                (select convert(count(1), char)
                 from obs o_fu
@@ -91,7 +91,7 @@
                ,'-',
                {% endif %}
                {% endfor %}
-               )) as dressing_counts
+               ),'-0','')) as dressing_counts
         from (select pn.given_name,
                      pn.family_name,
                      pi.identifier,
